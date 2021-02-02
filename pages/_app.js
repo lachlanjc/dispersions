@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Head from 'next/head'
 
+import '../public/fonts.css'
 import Meta from '../components/meta'
-import ColorSwitcher from '../components/color-switcher'
+import Nav from '../components/nav'
 import theme from '../lib/theme'
 import { ThemeProvider } from 'theme-ui'
 
@@ -10,7 +10,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <Meta />
-      <ColorSwitcher />
+      <Nav />
       <Component {...pageProps} />
     </ThemeProvider>
   )
