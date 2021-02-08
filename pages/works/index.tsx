@@ -1,6 +1,7 @@
 import { Grid, Heading, Container, Box } from 'theme-ui'
+import { GetStaticProps } from 'next'
 
-const Works = ({ works }) => (
+const Works = ({ works = [] }) => (
   <Container py={[4, 5]}>
     <Heading as="h1" variant="title">
       All works
@@ -16,3 +17,8 @@ const Works = ({ works }) => (
 )
 
 export default Works
+
+export const getStaticProps: GetStaticProps = async () => {
+  const works: Array<{}> = []
+  return { props: { works } }
+}

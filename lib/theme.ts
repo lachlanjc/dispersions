@@ -252,6 +252,8 @@ const theme = {
         boxShadow: 'elevated',
       },
     },
+    translucent: undefined,
+    translucentDark: undefined,
   },
   forms: {
     input: {
@@ -405,6 +407,9 @@ const theme = {
     supportsClipText: '@supports (-webkit-background-clip: text)',
     supportsBackdrop:
       '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)',
+    cx: undefined,
+    gx: undefined,
+    gxText: undefined,
   },
 }
 

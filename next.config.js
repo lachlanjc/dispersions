@@ -1,6 +1,6 @@
 const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
 module.exports = withMDX({
-  pageExtensions: ['js', 'mdx'],
+  pageExtensions: ['js', 'ts', 'tsx', 'mdx'],
   images: {
     domains: ['images.squarespace-cdn.com'],
   },
