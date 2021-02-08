@@ -47,3 +47,16 @@
     url('/fonts/National2Web-BoldItalic.woff') format('woff'),
     url('/fonts/National2Web-BoldItalic.eot') format('embedded-opentype');
 }
+
+/*
+@font-face {
+  font-display: swap;
+  font-family: 'Founders Grotesk Mono Web';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('/fonts/FoundersGroteskMonoWeb-Regular.woff2') format('woff2'),
+    url('/fonts/FoundersGroteskMonoWeb-Regular.woff') format('woff'),
+    url('/fonts/FoundersGroteskMonoWeb-Regular.eot') format('embedded-opentype');
+}
+*/
