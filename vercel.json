@@ -1,4 +1,10 @@
 {
   "public": true,
-  "github": { "silent": true }
+  "github": { "silent": true },
+  "rewrites": [
+    {
+      "source": "/worklist/:path*",
+      "destination": "https://cbcampbell-exhibition.s3.amazonaws.com/:path*"
+    }
+  ]
 }
