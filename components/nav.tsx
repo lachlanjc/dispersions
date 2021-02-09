@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 const Nav = () => (
   <Flex
+    as="nav"
     variant="narrow"
     sx={{
       bg: 'sheet',
