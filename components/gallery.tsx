@@ -5,7 +5,9 @@ import { Box, IconButton } from 'theme-ui'
 import { ChevronPrev, ChevronNext } from './icons'
 import Image from 'next/image'
 
-const ImageGallery = ({ images }: { images: Array<Image> }) => {
+type Props = { images: Image[]; onCaption: (c: string) => void }
+
+const ImageGallery = ({ images, onCaption }: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMounted, setIsMounted] = useState(false)
   const sliderContainerRef = useRef<HTMLDivElement>(null)
@@ -15,7 +17,9 @@ const ImageGallery = ({ images }: { images: Array<Image> }) => {
     slidesPerView: 1,
     mounted: () => setIsMounted(true),
     slideChanged(s) {
-      setCurrentSlide(s.details().relativeSlide)
+      const idx = s.details().relativeSlide
+      setCurrentSlide(idx)
+      onCaption(images[idx]?.caption)
     },
   })
 
@@ -85,7 +89,7 @@ const ImageGallery = ({ images }: { images: Array<Image> }) => {
               '> div': {
                 flexShrink: 0,
                 width: '100%',
-                maxHeight: '90vh',
+                maxHeight: '92vh',
               },
             }}
           >

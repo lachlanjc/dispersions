@@ -7,6 +7,7 @@ const Home = () => (
     as="main"
     sx={{
       flexDirection: 'column',
+      justifyContent: 'center',
       bg: 'text',
       color: 'background',
       position: 'relative',
@@ -34,7 +35,7 @@ const Home = () => (
       <Text as="p" variant="eyebrow" color="white" mb={3}>
         Opening March 1
       </Text>
-      <Heading as="h1" variant="ultratitle" mb={[4]}>
+      <Heading as="h1" variant="ultratitle" mb={[4, 5]}>
         Christopher Campbell’s debut online exhibition.
       </Heading>
     </Container>
