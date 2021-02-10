@@ -18,6 +18,7 @@ const Home = () => (
     }}
   >
     <BGImg
+      alt="Patch of one of Christopher's drawings, a grid of graphite squares with one orange accent"
       src="/worklist/2.2020.039_009_4096p.jpg"
       height={4096}
       width={2733}

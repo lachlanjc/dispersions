@@ -22,7 +22,10 @@ const Nav = () => (
     }}
   >
     <Link href="/" passHref>
-      <NavLink>Home</NavLink>
+      <NavLink>/</NavLink>
+    </Link>
+    <Link href="/exhibition" passHref>
+      <NavLink>Exhibition</NavLink>
     </Link>
     <Link href="/works" passHref>
       <NavLink>Works</NavLink>
