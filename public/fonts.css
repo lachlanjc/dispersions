@@ -1,11 +1,39 @@
 @font-face {
-  font-family: 'Soehne Breit Web';
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
+  font-family: 'Soehne Breit';
   src: url('/fonts/soehne-breit-web-fett.woff2') format('woff2'),
     url('/fonts/soehne-breit-web-fett.woff') format('woff'),
     url('/fonts/soehne-breit-web-fett.eot') format('embedded-opentype');
+  font-style: normal;
+  font-weight: bold;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Soehne Dreiviertelfett';
+  src: url('/fonts/soehne-web-dreiviertelfett.woff2') format('woff2'),
+    url('/fonts/soehne-web-dreiviertelfett.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/soehne-web-buch.woff2') format('woff2'),
+    url('/fonts/soehne-web-buch.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: optional;
+}
+
+/*
+@font-face {
+  font-family: 'Sohne';
+  src: url(/fonts/soehne-web-buch-kursiv.woff2) format('woff2'),
+    url(/fonts/soehne-web-buch-kursiv.woff) format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -48,7 +76,6 @@
     url('/fonts/National2Web-BoldItalic.eot') format('embedded-opentype');
 }
 
-/*
 @font-face {
   font-display: swap;
   font-family: 'Founders Grotesk Mono Web';

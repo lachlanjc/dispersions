@@ -69,9 +69,9 @@ const theme: Theme = {
   },
   fonts: {
     monospace: 'ui-monospace, "Roboto Mono", Menlo, Consolas, monospace',
-    heading: `"Soehne Breit Web", ${fonts}`,
-    body: `"National 2 Web", ${fonts}`,
-    display: `"Ayer Poster Angular Web", "Times New Roman", serif`,
+    heading: `"Soehne Dreiviertelfett", ${fonts}`,
+    body: `"Soehne", ${fonts}`,
+    display: `"Soehne Breit", ${fonts}`,
   },
   lineHeights: {
     limit: 0.875,
@@ -125,6 +125,7 @@ const theme: Theme = {
       mb: 0,
     },
     ultratitle: {
+      fontFamily: 'display',
       fontSize: [5, 6, 7],
       lineHeight: 'title',
       fontWeight: 'heading',
@@ -132,6 +133,7 @@ const theme: Theme = {
     },
     title: {
       variant: 'text.heading',
+      fontFamily: 'display',
       fontSize: [5, 6],
       letterSpacing: 'title',
       lineHeight: 'title',
@@ -164,6 +166,7 @@ const theme: Theme = {
     },
     eyebrow: {
       color: 'muted',
+      fontFamily: 'heading',
       fontSize: [3, 4],
       fontWeight: 'bold',
       letterSpacing: 'headline',
