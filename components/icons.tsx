@@ -1,4 +1,4 @@
-export const ArrowNext = (props?: Object) => (
+export const ChevronNext = (props?: Object) => (
   <svg
     fillRule="evenodd"
     clipRule="evenodd"
@@ -16,7 +16,7 @@ export const ArrowNext = (props?: Object) => (
   </svg>
 )
 
-export const ArrowPrev = (props?: Object) => (
+export const ChevronPrev = (props?: Object) => (
   <svg
     fillRule="evenodd"
     clipRule="evenodd"

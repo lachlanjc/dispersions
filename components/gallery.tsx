@@ -2,7 +2,7 @@
 import { useKeenSlider } from 'keen-slider/react'
 import React, { useState, useRef, useEffect } from 'react'
 import { Box, IconButton } from 'theme-ui'
-import { ArrowPrev, ArrowNext } from './icons'
+import { ChevronPrev, ChevronNext } from './icons'
 import Image from 'next/image'
 
 const ImageGallery = ({ images }: { images: Array<Image> }) => {
@@ -81,6 +81,7 @@ const ImageGallery = ({ images }: { images: Array<Image> }) => {
             className="keen-slider__slide"
             sx={{
               alignSelf: 'center',
+              display: 'flex',
               '> div': {
                 flexShrink: 0,
                 width: '100%',
@@ -116,7 +117,7 @@ const ImageGallery = ({ images }: { images: Array<Image> }) => {
             left: 2,
             boxShadow: 'card',
             transform: 'translateY(-50%)',
-            transformOrigin: 'left center',
+            transformOrigin: 'right center',
             transition: '0.125s ease-in-out',
             transitionProperty: 'transform, box-shadow',
             ':hover,:focus': {
@@ -125,7 +126,7 @@ const ImageGallery = ({ images }: { images: Array<Image> }) => {
             },
           }}
         >
-          <ArrowPrev />
+          <ChevronPrev />
         </IconButton>,
         <IconButton
           key="next"
@@ -142,7 +143,7 @@ const ImageGallery = ({ images }: { images: Array<Image> }) => {
             right: 2,
             boxShadow: 'card',
             transform: 'translateY(-50%)',
-            transformOrigin: 'right center',
+            transformOrigin: 'left center',
             transition: '0.125s ease-in-out',
             transitionProperty: 'transform, box-shadow',
             ':hover,:focus': {
@@ -151,7 +152,7 @@ const ImageGallery = ({ images }: { images: Array<Image> }) => {
             },
           }}
         >
-          <ArrowNext />
+          <ChevronNext />
         </IconButton>,
         <Box
           key="dots"

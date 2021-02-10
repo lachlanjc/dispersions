@@ -283,7 +283,7 @@ const theme: Theme = {
       color: 'text',
       boxShadow: 'none',
       [util.supportsBackdrop]: {
-        backgroundColor: 'rgba(255, 255, 255, 0.75)',
+        backgroundColor: 'rgba(255, 255, 255, 0.625)',
         backdropFilter: 'saturate(180%) blur(20px)',
         WebkitBackdropFilter: 'saturate(180%) blur(20px)',
       },
