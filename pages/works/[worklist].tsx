@@ -54,10 +54,7 @@ const Work = ({ work }: Props) => (
         {work.medium}
       </Text>
       <Text as="p" mb={1}>
-        {formatDimsCm(work)}
-      </Text>
-      <Text as="p" mb={1}>
-        {formatDimsIn(work)}
+        {formatDimsCm(work)} ({formatDimsIn(work)})
       </Text>
     </Box>
     <Gallery images={work.images} />
