@@ -7,6 +7,7 @@ import {
   WorklistNumbers,
 } from '@/lib/worklist'
 import { Grid as GridIcon } from '@/components/icons'
+import Meta from '@/components/meta'
 import Gallery from '@/components/gallery'
 import NextLink from 'next/link'
 
@@ -22,6 +23,7 @@ const Work = ({ work }: Props) => (
     py={4}
     sx={{ alignItems: 'center' }}
   >
+    <Meta title={work.title} />
     <Box
       as="article"
       sx={{
