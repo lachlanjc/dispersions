@@ -104,7 +104,7 @@ const theme: Theme = {
   radii: {
     small: 3,
     default: 6,
-    extra: 9,
+    extra: 12,
     ultra: 18,
     circle: 99999,
   },
