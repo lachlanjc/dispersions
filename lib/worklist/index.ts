@@ -3,9 +3,16 @@ import { map, find } from 'lodash'
 
 export const getFullWorklist = (): Array<Artwork> => fullWorklist
 
-export const worklistNumbers: Array<string> = map(fullWorklist, 'worklist')
+export const worklistNumbers: Array<string> = map(fullWorklist, 'worklist') 
 
-export const getWork = (id: keyof typeof worklistNumbers): Artwork =>
+type ElementType < T extends ReadonlyArray < unknown > > = T extends ReadonlyArray<
+  infer ElementType
+>
+  ? ElementType
+  : never
+export type WorklistNumbers = ElementType<typeof worklistNumbers>
+
+export const getWork = (id: WorklistNumbers): Artwork =>
   find(fullWorklist, ['worklist', id]) as Artwork
 
 export const formatDimsCm = (work: Artwork): string =>

@@ -4,13 +4,14 @@ import {
   formatDimsCm,
   formatDimsIn,
   getWork,
+  WorklistNumbers,
 } from '@/lib/worklist'
 import { Grid as GridIcon } from '@/components/icons'
 import Gallery from '@/components/gallery'
 import NextLink from 'next/link'
 
 type Props = { work: Artwork }
-type Params = { params: { worklist: string } }
+type Params = { params: { worklist: WorklistNumbers } }
 
 const Work = ({ work }: Props) => (
   <Grid
