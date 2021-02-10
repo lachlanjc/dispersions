@@ -6,12 +6,15 @@ const Nav = () => (
     as="nav"
     variant="narrow"
     sx={{
-      bg: 'sheet',
+      borderBottom: '1px solid',
+      borderBottomColor: 'smoke',
+      borderBottomWidth: 0.5,
       py: 3,
       display: 'flex',
       justifyContent: 'center',
       a: {
         mx: [2, 3],
+        fontWeight: 'body',
         textTransform: 'uppercase',
         letterSpacing: 'headline',
         color: 'muted',

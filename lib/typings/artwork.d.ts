@@ -1,3 +1,10 @@
+interface Image {
+  path: string,
+  caption: string,
+  width: number,
+  height: number,
+}
+
 interface Artwork {
   worklist: string,
   title: string,
@@ -9,10 +16,5 @@ interface Artwork {
     inW: string,
     inH: string,
   },
-  images: Array<{
-    path: string,
-    caption: string,
-    width: number,
-    height: number,
-  }>,
+  images: Array<Image>,
 }

@@ -6,7 +6,7 @@ import {
   getWork,
 } from '@/lib/worklist'
 import { Grid as GridIcon } from '@/components/icons'
-import Image from 'next/image'
+import Gallery from '@/components/gallery'
 import NextLink from 'next/link'
 
 type Props = { work: Artwork }
@@ -17,42 +17,22 @@ const Work = ({ work }: Props) => (
     as="main"
     columns={[null, '2fr 1fr']}
     gap={[4, 5]}
-    px={[3, 4, 5]}
-    py={[4, 5]}
+    px={[null, 3, 4]}
+    py={4}
+    sx={{ alignItems: 'center' }}
   >
     <Box
+      as="article"
       sx={{
-        display: 'flex',
-        overflowY: 'auto',
-        width: '100%',
-        maxHeight: '100vh',
-        scrollSnapType: 'x mandatory',
-        '> div': {
-          flexShrink: 0,
-          width: '100%',
-          mx: [3, 4],
-          maxHeight: '90vh',
-          scrollSnapAlign: 'center',
-        },
+        gridRow: 1,
+        gridColumn: [null, '2'],
+        color: 'muted',
+        px: [3, 0],
       }}
     >
-      {work.images.map(img => (
-        <Image
-          key={img.path}
-          src={img.path}
-          alt={img.caption}
-          width={img.width}
-          height={img.height}
-          sizes="50vw"
-          objectFit="contain"
-        />
-      ))}
-    </Box>
-    <Box as="article" sx={{ color: 'muted' }}>
       <NextLink href="/works" passHref>
         <Link
           sx={{
-            mt: [null, 4, 5, 6],
             mb: 3,
             display: 'flex',
             alignItems: 'center',
@@ -79,6 +59,7 @@ const Work = ({ work }: Props) => (
         {formatDimsIn(work)}
       </Text>
     </Box>
+    <Gallery images={work.images} />
   </Grid>
 )
 
