@@ -226,11 +226,7 @@ const theme: Theme = {
       boxShadow: 'card',
       WebkitTapHighlightColor: 'transparent',
       transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
-      ':focus,:hover': {
-        boxShadow: 'elevated',
-        transform: 'scale(1.0625)',
-      },
-      svg: { ml: -1, mr: 2, verticalAlign: 'middle' },
+      overflow: 'hidden',
     },
     lg: {
       variant: 'buttons.primary',
@@ -254,6 +250,25 @@ const theme: Theme = {
       fontSize: 3,
       px: 4,
       py: 3,
+      span: { transition: '0.25s transform ease-in-out' },
+      svg: {
+        ml: 0,
+        mr: -24,
+        opacity: 0,
+        transform: 'translateX(150%)',
+        transition: '0.25s ease-in-out',
+        transitionProperty: 'opacity, transform',
+      },
+      ':focus,:hover': {
+        boxShadow: 'elevated',
+        span: {
+          transform: 'translateX(-12px)',
+        },
+        svg: {
+          opacity: 1,
+          transform: 'translateX(-4px)',
+        },
+      },
     },
   },
   cards: {

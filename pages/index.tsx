@@ -23,7 +23,7 @@ const Home = () => (
       src="/worklist/2.2020.039_009_4096p.jpg"
       height={4096}
       width={2733}
-      layout="responsive"
+      priority
     />
     <Container
       variant="copy"
