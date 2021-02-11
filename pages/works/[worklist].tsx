@@ -26,7 +26,7 @@ const Work = ({ work }: Props) => {
       gap={[4, 5]}
       px={[null, 3]}
       py={3}
-      sx={{ alignItems: 'center' }}
+      sx={{ alignItems: 'center', minHeight: '100vh' }}
     >
       <Meta title={work.title} />
       <Box

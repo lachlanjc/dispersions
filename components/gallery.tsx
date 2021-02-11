@@ -57,10 +57,10 @@ const ImageGallery = ({ images, onCaption }: Props) => {
 
   return (
     <Box
+      as="section"
       sx={{
         position: 'relative',
         width: '100%',
-        height: '100%',
       }}
       ref={sliderContainerRef}
     >
@@ -86,6 +86,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
             sx={{
               alignSelf: 'center',
               display: 'flex',
+              minHeight: 'auto',
               '> div': {
                 flexShrink: 0,
                 width: '100%',
@@ -164,7 +165,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
             transform: 'translateX(-50%)',
             display: 'block',
             position: 'absolute',
-            bottom: [-2, -48],
+            bottom: -48,
             left: '50%',
           }}
         >
