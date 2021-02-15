@@ -11,14 +11,9 @@ const Works = ({ works }: { works: Array<Artwork> }) => (
       All works
     </Heading>
     <Paragraph as="p" variant="subtitle">
-      48 works on paper, made from March–December 2020.
+      48 works on paper, made from April–December 2020.
     </Paragraph>
-    <Grid
-      columns={[2, 3]}
-      gap={[3, 4]}
-      mt={[4, 5]}
-      sx={{ scrollSnapType: 'y mandatory' }}
-    >
+    <Grid columns={[2, 3]} gap={[3, 4]} mt={[4, 5]}>
       {works.map(work => (
         <Work work={work} key={work.worklist} />
       ))}

@@ -10,9 +10,9 @@ type ElementType < T extends ReadonlyArray < unknown > > = T extends ReadonlyArr
 >
   ? ElementType
   : never
-export type WorklistNumbers = ElementType<typeof worklistNumbers>
+export type WorklistNumber = ElementType<typeof worklistNumbers>
 
-export const getWork = (id: WorklistNumbers): Artwork =>
+export const getWork = (id: WorklistNumber): Artwork =>
   find(fullWorklist, ['worklist', id]) as Artwork
 
 export const formatDimsCm = (work: Artwork): string =>

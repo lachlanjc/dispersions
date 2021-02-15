@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Grid, Heading, Text, Link, Box } from 'theme-ui'
 import {
+  getWork,
   worklistNumbers,
   formatDimsCm,
   formatDimsIn,
-  getWork,
-  WorklistNumbers,
+  WorklistNumber,
 } from '@/lib/worklist'
 import { Grid as GridIcon } from '@/components/icons'
 import Meta from '@/components/meta'
@@ -13,7 +13,7 @@ import Gallery from '@/components/gallery'
 import NextLink from 'next/link'
 
 type Props = { work: Artwork }
-type Params = { params: { worklist: WorklistNumbers } }
+type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
   const [caption, setCaption] = useState<string>('')
