@@ -19,8 +19,8 @@ const color: string = colors.black
 const Meta = ({
   title = 'Dispersions',
   name = 'Dispersions',
-  description = 'Christopher Campbell’s debut online show, opening March 1.',
-  image = '',
+  description = 'Christopher Campbell’s debut online show, with a collection of 48 stark drawings from 2020. Dispersions opens March 1.',
+  image = 'https://dispersions.vercel.app/card.jpg',
   url = 'https://dispersions.cbcampbell.com',
   children,
 }: Props) => (
