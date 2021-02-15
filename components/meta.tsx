@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { Component, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
+import { colors } from '@/lib/theme'
 
 const makeTitle = (title: string, name: string): string =>
   title === name ? title : `${title} – ${name}`
@@ -13,14 +14,14 @@ interface Props extends PropsWithChildren<any> {
   children?: JSX.Element
 }
 
-const color = '#111'
+const color: string = colors.black
 
 const Meta = ({
-  title = 'Christopher Campbell 2021',
-  name = 'Christopher Campbell 2021',
+  title = 'Dispersions',
+  name = 'Dispersions',
   description = 'Christopher Campbell’s debut online show, opening March 1.',
   image = '',
-  url = 'https://studio-show.vercel.app',
+  url = 'https://dispersions.cbcampbell.com',
   children,
 }: Props) => (
   <Head>
@@ -50,12 +51,7 @@ const Meta = ({
     )}
     <meta key="theme_color" name="theme-color" content={color} />
     <meta key="tile_color" name="msapplication-TileColor" content={color} />
-    {/* <link
-      key="safari_icon"
-      rel="mask-icon"
-      href={`${url}/safari-pinned-tab.png`}
-      color={color}
-    />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link
       key="apple_icon"
       rel="apple-touch-icon"
@@ -76,7 +72,7 @@ const Meta = ({
       sizes="16x16"
       href={`${url}/favicon-16x16.png`}
     />
-    <link key="manifest" rel="manifest" href={`${url}/site.webmanifest`} /> */}
+    <link key="manifest" rel="manifest" href={`${url}/manifest.webmanifest`} />
     {children}
   </Head>
 )

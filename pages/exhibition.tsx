@@ -5,7 +5,7 @@ import Vimeo from '@u-wave/react-vimeo'
 import Meta from '@/components/meta'
 import BGImg from '@/components/bg-img'
 import { ArrowRight, ChevronNext } from '@/components/icons'
-import theme from '@/lib/theme'
+import { colors } from '@/lib/theme'
 
 const Exhibition = () => (
   <>
@@ -94,7 +94,7 @@ const Exhibition = () => (
     >
       <Vimeo
         video="https://vimeo.com/512374691/23becfae57"
-        color={theme?.colors?.accent?.toString().replace('#', '')}
+        color={colors.red.toString().replace('#', '')}
         showTitle={false}
         showByline={false}
         showPortrait={false}
