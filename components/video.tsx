@@ -1,7 +1,6 @@
 // Credit to https://github.com/vercel/next.js/blob/canary/examples/with-mux-video/components/video-player.js
 import { useEffect, useRef } from 'react'
 import Hls from 'hls.js'
-import { Box, ThemeUIStyleObject } from 'theme-ui'
 
 interface Props {
   mux: string
@@ -10,7 +9,6 @@ interface Props {
   muted?: boolean
   autoPlay?: boolean
   controls?: boolean
-  sx?: ThemeUIStyleObject
 }
 
 const Video = ({
@@ -20,7 +18,6 @@ const Video = ({
   muted = true,
   autoPlay = false,
   controls = false,
-  sx = {},
   ...props
 }: React.ComponentPropsWithoutRef<'video'> & Props) => {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -54,21 +51,18 @@ const Video = ({
   }, [src, videoRef])
 
   return (
-    <Box as="figure" sx={sx}>
-      <video
-        loop={loop}
-        muted={muted}
-        autoPlay={autoPlay}
-        controls={controls}
-        preload="metadata"
-        poster={`https://image.mux.com/${mux}/thumbnail.jpg?width=512&fit_mode=pad&time=0`}
-        playsInline
-        aria-label={caption}
-        {...props}
-      >
-        <source src={src} type="application/x-mpegURL" />
-      </video>
-    </Box>
+    <video
+      src={src}
+      loop={loop}
+      muted={muted}
+      autoPlay={autoPlay}
+      controls={controls}
+      preload="metadata"
+      poster={`https://image.mux.com/${mux}/thumbnail.jpg?width=512&fit_mode=pad&time=0`}
+      playsInline
+      aria-label={caption}
+      {...props}
+    />
   )
 }
 

@@ -4,6 +4,7 @@ import NextLink from 'next/link'
 import Vimeo from '@u-wave/react-vimeo'
 import Meta from '@/components/meta'
 import BGImg from '@/components/bg-img'
+import Video from '@/components/video'
 import { ArrowRight, ChevronNext } from '@/components/icons'
 import { colors } from '@/lib/theme'
 
@@ -100,6 +101,13 @@ const Exhibition = () => (
         showPortrait={false}
       />
     </Flex>
+    <Video
+      mux="rlyfZBce1Bne42x00hISDPmI9vHZJmgqAnQkBw01UnnP4"
+      width="100%"
+      autoPlay
+      muted
+      loop
+    />
   </>
 )
 
