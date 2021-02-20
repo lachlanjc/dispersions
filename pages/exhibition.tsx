@@ -94,7 +94,7 @@ const Exhibition = () => (
       }}
     >
       <Vimeo
-        video="https://vimeo.com/512374691/23becfae57"
+        video="https://vimeo.com/514479551"
         color={colors.red.toString().replace('#', '')}
         showTitle={false}
         showByline={false}
