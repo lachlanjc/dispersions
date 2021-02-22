@@ -823,22 +823,22 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@types/vimeo__player@^2.9.0":
+"@types/vimeo__player@^2.10.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@types/vimeo__player/-/vimeo__player-2.10.0.tgz#dee8934c59d0a01a4252e6fb143c8807d3235502"
   integrity sha512-uhKJDgEfQiEhKHw9bP7+wZSvXTyN4iw4Yb+7Omo76jCJZp1NZkWfZYaaobXrkiuFT6k2ld2eqaXKSpvqfmDUPQ==
 
-"@u-wave/react-vimeo@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@u-wave/react-vimeo/-/react-vimeo-0.9.2.tgz#5701bfb2bfb19a24df27653ddf3f5551cfdfb697"
-  integrity sha512-pe7BGGpFULPEmQASgj42X/3IX7qIuj7COsVg/q4kcJpoy59yriIT9PSO5UVqRSp8h6NDjxo5M5uDKt9N0oJe5g==
+"@u-wave/react-vimeo@^0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@u-wave/react-vimeo/-/react-vimeo-0.9.3.tgz#bc3189ac2d155a5c6211f19b34006eff03f04aec"
+  integrity sha512-GMEawxMIsTVh5bfPuHriLPeOBlcVNTWiP/0E9ZGZ+3dBj3MhyN2q8UyA90q+RV7twCyXwvL5g5xtTo0xIohqig==
   dependencies:
     "@types/react" "^17.0.0"
-    "@types/vimeo__player" "^2.9.0"
-    "@vimeo/player" "^2.10.0"
+    "@types/vimeo__player" "^2.10.0"
+    "@vimeo/player" "^2.14.1"
     prop-types "^15.7.2"
 
-"@vimeo/player@^2.10.0":
+"@vimeo/player@^2.14.1":
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/@vimeo/player/-/player-2.15.0.tgz#c1037706f0a95abf87f6aa960d058e11efe6510e"
   integrity sha512-PH+H7G7pIUbrw8AHeigOc13cUoe8E78y4XCVqSP7pLFj/kQm0EvHQGBO3224Qq7a0XMEmNR6kH+n+8o0GslWCg==
