@@ -12,6 +12,7 @@ const About = () => (
       columns={[null, '2fr 3fr']}
       as="header"
       py={[4, 5, 6]}
+      sx={{ alignItems: 'start' }}
     >
       <Image
         layout="responsive"
