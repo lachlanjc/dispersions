@@ -7,6 +7,29 @@ import Image from 'next/image'
 
 type Props = { images: Image[]; onCaption: (c: string) => void }
 
+const controlSx = {
+  variant: 'cards.translucent',
+  borderRadius: 'circle',
+  p: 2,
+  cursor: 'pointer',
+  width: 'auto',
+  height: 'auto',
+  position: 'absolute',
+  top: '50%',
+  boxShadow: 'card',
+  transform: 'translateY(-50%)',
+  transition: '0.125s ease-in-out',
+  transitionProperty: 'color, box-shadow, transform',
+  ':hover,:focus,:active': {
+    transform: 'translateY(-50%) scale(1.5)',
+    boxShadow: 'elevated',
+  },
+  ':focus': {
+    color: 'blue',
+    outline: 'none',
+  },
+}
+
 const ImageGallery = ({ images, onCaption }: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMounted, setIsMounted] = useState(false)
@@ -112,23 +135,9 @@ const ImageGallery = ({ images, onCaption }: Props) => {
           onClick={slider?.prev}
           aria-label="Previous Image"
           sx={{
-            variant: 'cards.translucent',
-            borderRadius: 'circle',
-            p: 2,
-            width: 'auto',
-            height: 'auto',
-            position: 'absolute',
-            top: '50%',
+            ...controlSx,
             left: 2,
-            boxShadow: 'card',
-            transform: 'translateY(-50%)',
             transformOrigin: 'right center',
-            transition: '0.125s ease-in-out',
-            transitionProperty: 'transform, box-shadow',
-            ':hover,:focus': {
-              transform: 'translateY(-50%) scale(1.5)',
-              boxShadow: 'elevated',
-            },
           }}
         >
           <ChevronPrev />
@@ -138,23 +147,9 @@ const ImageGallery = ({ images, onCaption }: Props) => {
           onClick={slider?.next}
           aria-label="Next Image"
           sx={{
-            variant: 'cards.translucent',
-            borderRadius: 'circle',
-            p: 2,
-            width: 'auto',
-            height: 'auto',
-            position: 'absolute',
-            top: '50%',
+            ...controlSx,
             right: 2,
-            boxShadow: 'card',
-            transform: 'translateY(-50%)',
             transformOrigin: 'left center',
-            transition: '0.125s ease-in-out',
-            transitionProperty: 'transform, box-shadow',
-            ':hover,:focus': {
-              transform: 'translateY(-50%) scale(1.5)',
-              boxShadow: 'elevated',
-            },
           }}
         >
           <ChevronNext />
@@ -173,7 +168,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
             <Box
               as="button"
               aria-label="Position indicator"
-              key={idx}
+              key={i}
               onClick={() => {
                 slider.moveToSlideRelative(i)
               }}

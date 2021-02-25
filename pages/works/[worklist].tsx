@@ -17,7 +17,6 @@ type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
   const [caption, setCaption] = useState<string>('')
-  console.log(caption)
 
   return (
     <Grid
@@ -25,7 +24,7 @@ const Work = ({ work }: Props) => {
       columns={[null, '2fr 1fr']}
       gap={[4, 5]}
       px={[null, 3]}
-      py={3}
+      py={[4, 3, 0]}
       sx={{ alignItems: 'center', minHeight: '100vh' }}
     >
       <Meta title={work.title} />
@@ -93,6 +92,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { worklist } }: Params) {
   const work = getWork(worklist)
-  work.images = work.images?.filter(i => !i.path.includes('thumbnail'))
+  work.images = work.images.filter(i => !i.path.includes('thumbnail'))
   return { props: { work }, revalidate: false }
 }

@@ -35,7 +35,7 @@ export const colors = {
 
   black: '#1d1d1f',
   slate: '#515154',
-  muted: '#919195',
+  muted: '#727275',
   smoke: '#e0e0e4',
   snow: '#f5f5f7',
   white: '#ffffff',
