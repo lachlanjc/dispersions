@@ -22,7 +22,7 @@ const Exhibition = () => (
     >
       <BGImg
         alt="Detail of Christopher's drawing with graphite in dripping arcs"
-        src="/worklist/2.2020.040_012_4096p.jpg"
+        src="/worklist/2.2020.040_2_processe.jpg"
         width={4096}
         height={2733}
         priority
