@@ -10,6 +10,9 @@ const Work = ({ work, img = 0 }: Props) => {
     <NextLink href={`/works/${work.worklist}`} passHref>
       <Link
         sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
           textDecoration: 'none',
           color: 'text',
           transition: '0.125s color ease-in-out',

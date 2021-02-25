@@ -93,5 +93,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { worklist } }: Params) {
   const work = getWork(worklist)
+  work.images = work.images?.filter(i => !i.path.includes('thumbnail'))
   return { props: { work }, revalidate: false }
 }
