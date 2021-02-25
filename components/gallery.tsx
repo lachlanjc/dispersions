@@ -1,13 +1,13 @@
 // Adapted from https://github.com/vercel/commerce/blob/master/components/product/ProductSlider/ProductSlider.tsx
 import { useKeenSlider } from 'keen-slider/react'
 import React, { useState, useRef, useEffect } from 'react'
-import { Box, IconButton } from 'theme-ui'
+import { Box, IconButton, ThemeUIStyleObject } from 'theme-ui'
 import { ChevronPrev, ChevronNext } from './icons'
 import Image from 'next/image'
 
 type Props = { images: Image[]; onCaption: (c: string) => void }
 
-const controlSx = {
+const controlSx: ThemeUIStyleObject = {
   variant: 'cards.translucent',
   borderRadius: 'circle',
   p: 2,
