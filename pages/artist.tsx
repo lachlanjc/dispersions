@@ -31,10 +31,10 @@ const About = () => (
     </Grid>
     <Image
       layout="responsive"
-      width={3308}
-      height={1448}
+      width={4096}
+      height={1069}
       alt="Panorama of Christopher's studio"
-      src="/artist/studio.jpg"
+      src="/artist/studio_pano_3.jpg"
     />
     <Box as="section" bg="dark" py={[4, 5]}>
       <Grid
@@ -43,9 +43,16 @@ const About = () => (
         gap={[3, 4, 5]}
         sx={{
           px: [3, 4, 5],
-          p: { color: 'white', fontSize: 2, maxWidth: '40ch' },
+          p: {
+            color: 'white',
+            fontSize: 2,
+            maxWidth: 'copy',
+            mx: 'auto',
+            gridColumn: [null, 'span 2'],
+          },
         }}
       >
+        <Tools />
         <Image
           layout="responsive"
           width={4096}
@@ -54,7 +61,14 @@ const About = () => (
           src="/artist/palette_tools.jpg"
           sizes="40vw"
         />
-        <Tools />
+        <Image
+          layout="responsive"
+          width={4096}
+          height={2733}
+          alt="Stainless steel blades lined up"
+          src="/artist/blades.jpg"
+          sizes="40vw"
+        />
       </Grid>
     </Box>
   </>
