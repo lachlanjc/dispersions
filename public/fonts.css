@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'Soehne Dreiviertelfett';
+  font-family: 'Soehne';
   src: url('/fonts/soehne-web-dreiviertelfett.woff2') format('woff2'),
     url('/fonts/soehne-web-dreiviertelfett.woff') format('woff');
   font-weight: bold;

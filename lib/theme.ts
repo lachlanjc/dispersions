@@ -69,7 +69,7 @@ const theme: Theme = {
   },
   fonts: {
     monospace: 'ui-monospace, "Roboto Mono", Menlo, Consolas, monospace',
-    heading: `"Soehne Dreiviertelfett", ${fonts}`,
+    heading: `"Soehne", ${fonts}`,
     body: `"Soehne", ${fonts}`,
     display: `"Soehne Breit", ${fonts}`,
   },

@@ -2,6 +2,7 @@ import { Grid, Box, Heading } from 'theme-ui'
 import Image from 'next/image'
 import Meta from '@/components/meta'
 import Bio from '@/components/about/bio.mdx'
+import Tools from '@/components/about/tools.mdx'
 
 const About = () => (
   <>
@@ -35,6 +36,27 @@ const About = () => (
       alt="Panorama of Christopher's studio"
       src="/artist/studio.jpg"
     />
+    <Box as="section" bg="dark" py={[4, 5]}>
+      <Grid
+        variant="layout.wide"
+        columns={[null, 2]}
+        gap={[3, 4, 5]}
+        sx={{
+          px: [3, 4, 5],
+          p: { color: 'white', fontSize: 2, maxWidth: '40ch' },
+        }}
+      >
+        <Image
+          layout="responsive"
+          width={4096}
+          height={2733}
+          alt="Christopher's painting tools on a glass palette outside"
+          src="/artist/palette_tools.jpg"
+          sizes="40vw"
+        />
+        <Tools />
+      </Grid>
+    </Box>
   </>
 )
 
