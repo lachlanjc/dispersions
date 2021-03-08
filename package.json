@@ -29,7 +29,7 @@
     "exifr": "^6.0.0",
     "image-size": "^0.9.4",
     "neat-csv": "^6.0.1",
-    "typescript": "^4.2.2",
+    "typescript": "^4.2.3",
     "write-json-file": "^4.3.0"
   }
 }
