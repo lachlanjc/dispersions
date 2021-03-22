@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^10.0.8",
+    "@next/mdx": "^10.0.9",
     "@u-wave/react-vimeo": "^0.9.3",
     "hls.js": "^0.14.17",
     "keen-slider": "^5.4.0",
