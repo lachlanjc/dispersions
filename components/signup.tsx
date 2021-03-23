@@ -41,7 +41,6 @@ const Signup = () => {
     e.preventDefault()
     if (email.length < 3) return
     setSubmitting(true)
-    /*
     let submission = await fetch('/api/subscribe', {
       method: 'POST',
       body: JSON.stringify({ email, timestamp: new Date() }),
@@ -60,8 +59,6 @@ const Signup = () => {
       const body = await submission.json()
       setError(body?.error || 'Something went wrong.')
     }
-    */
-    setError('Signup isn’t ready yet')
   }
 
   return (
@@ -73,29 +70,30 @@ const Signup = () => {
         color: 'background',
       }}
     >
-      <Heading
-        as="h2"
-        variant="subheadline"
-        sx={{ mt: 0, px: [2, 4], textAlign: 'center' }}
-      >
-        Sign up for opening day
-      </Heading>
       {done ? (
-        <Grid
-          gap={2}
-          columns="auto 1fr auto"
-          sx={{ color: 'green', fontSize: 3, alignItems: 'center' }}
-        >
-          <Text sx={{ fontSize: 2 }}>
-            <strong>Signed up!</strong> ({email})
+        <>
+          <Text as="p" sx={{ fontSize: 2, minWidth: 256 }}>
+            <strong>Signed up!</strong>
           </Text>
-          <IconButton
+          <Text as="p" variant="caption">
+            {email}
+          </Text>
+          <Button
             onClick={() => setDone(false)}
-            sx={{ color: 'secondary', fontSize: 4 }}
+            variant="outline"
+            sx={{
+              color: 'white',
+              fontSize: 1,
+              fontWeight: 'inherit',
+              borderWidth: 1,
+              mt: 3,
+              px: 2,
+              py: 1,
+            }}
           >
-            🔄
-          </IconButton>
-        </Grid>
+            Sign up again
+          </Button>
+        </>
       ) : (
         <Grid
           as="form"
@@ -103,12 +101,25 @@ const Signup = () => {
           gap={3}
           columns="1fr auto"
           sx={{
-            mt: [null, 4],
             gridTemplateColumns: '1fr auto',
             textAlign: 'left',
             alignItems: 'center',
           }}
         >
+          <Heading
+            as="h2"
+            variant="subheadline"
+            sx={{
+              gridColumn: 'span 2',
+              mt: 0,
+              px: [2, 4],
+              textAlign: 'center',
+            }}
+          >
+            Get an email
+            <br />
+            about opening day
+          </Heading>
           <div>
             <Label
               htmlFor="email"
@@ -143,7 +154,7 @@ const Signup = () => {
               color: 'background',
               borderRadius: 'circle',
               ':hover,:focus': {
-                boxShadow: 'inset 0 0 0 2px white',
+                boxShadow: 'inset 0 0 0 1px white',
                 transform: 'rotate(-45deg)',
               },
             }}

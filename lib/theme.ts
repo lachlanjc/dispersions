@@ -276,14 +276,14 @@ const theme: Theme = {
       bg: 'elevated',
       color: 'text',
       p: [3, 4],
-      borderRadius: 'extra',
+      borderRadius: 'default',
       boxShadow: 'card',
       overflow: 'hidden',
     },
     sunken: {
       bg: 'sunken',
       p: [3, 4],
-      borderRadius: 'extra',
+      borderRadius: 'default',
       'th, td': { borderColor: 'muted' },
     },
     interactive: {
