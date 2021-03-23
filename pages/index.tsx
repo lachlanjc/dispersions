@@ -12,7 +12,7 @@ const Home = () => (
       color: 'background',
       position: 'relative',
       width: '100%',
-      minHeight: 'calc(100vh - 56px)',
+      minHeight: '100vh',
       textAlign: 'center',
       placeItems: 'center',
       py: 5,
@@ -33,7 +33,7 @@ const Home = () => (
       }}
     >
       <Text as="p" variant="eyebrow" color="white" mb={3}>
-        Opening March 1
+        Opening April 2021
       </Text>
       <Heading as="h1" variant="ultratitle" mb={[4, 5]}>
         Christopher Campbell’s debut online exhibition.
