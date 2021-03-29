@@ -783,10 +783,10 @@
   resolved "https://registry.yarnpkg.com/@types/vimeo__player/-/vimeo__player-2.10.0.tgz#dee8934c59d0a01a4252e6fb143c8807d3235502"
   integrity sha512-uhKJDgEfQiEhKHw9bP7+wZSvXTyN4iw4Yb+7Omo76jCJZp1NZkWfZYaaobXrkiuFT6k2ld2eqaXKSpvqfmDUPQ==
 
-"@u-wave/react-vimeo@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@u-wave/react-vimeo/-/react-vimeo-0.9.3.tgz#bc3189ac2d155a5c6211f19b34006eff03f04aec"
-  integrity sha512-GMEawxMIsTVh5bfPuHriLPeOBlcVNTWiP/0E9ZGZ+3dBj3MhyN2q8UyA90q+RV7twCyXwvL5g5xtTo0xIohqig==
+"@u-wave/react-vimeo@^0.9.4":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@u-wave/react-vimeo/-/react-vimeo-0.9.4.tgz#3e3c41017197cbbbf17af53168468acbcd5ad6ae"
+  integrity sha512-pn0mfZtgz/lE7d3awUToo4dXy3c0AXNMWU+UOoAs++yndS7F8HHNL3x3vi0AO6nzOa4S0Di2ulS0mPATkE/t4w==
   dependencies:
     "@types/react" "^17.0.0"
     "@types/vimeo__player" "^2.10.0"
