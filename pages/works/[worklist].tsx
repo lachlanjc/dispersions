@@ -27,7 +27,10 @@ const Work = ({ work }: Props) => {
       py={[4, 3, 0]}
       sx={{ alignItems: 'center', minHeight: '100vh' }}
     >
-      <Meta title={work.title} />
+      <Meta
+        title={work.title.replace('Dispersions,', 'Artwork')}
+        description={`This ${work.date} artwork on ${work.medium} is part of Christopher Campbell’s Dispersions exhibition inspired by COVID-19.`}
+      />
       <Box
         as="article"
         sx={{
