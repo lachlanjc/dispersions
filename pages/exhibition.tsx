@@ -86,11 +86,23 @@ const Exhibition = () => (
         color: 'white',
         alignItems: 'center',
         justifyContent: 'center',
-        maxHeight: '100vh',
-        '> div, iframe': {
-          maxWidth: '95vw',
-          width: [384, 512, 1024, 1536],
-          height: [384, 512, 1024, 1536].map(n => n * (9 / 16)),
+        minHeight: '100vh',
+        '> div': {
+          display: 'block',
+          width: '95vw',
+          maxWidth: [384, 512, 1024, 1536],
+          height: 0,
+          paddingBottom: `${(9 / 16) * 100}%`,
+          position: 'relative',
+        },
+        iframe: {
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          top: 0,
+          bottom: 0,
+          left: 0,
+          border: 0,
         },
       }}
     >

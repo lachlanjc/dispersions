@@ -52,6 +52,7 @@ const Video = ({
 
   return (
     <video
+      ref={videoRef}
       src={src}
       loop={loop}
       muted={muted}
