@@ -9,8 +9,9 @@ import {
   imageUrl,
 } from '@/lib/worklist'
 import { Grid as GridIcon } from '@/components/icons'
-import Meta from '@/components/meta'
 import Gallery from '@/components/gallery'
+import Meta from '@/components/meta'
+import Head from 'next/head'
 import NextLink from 'next/link'
 
 type Props = { work: Artwork }
@@ -34,7 +35,6 @@ const Work = ({ work }: Props) => {
         description={`This ${work.date} artwork on ${work.medium} is part of Christopher Campbell’s Dispersions exhibition inspired by COVID-19.`}
         image={cover ? imageUrl(cover.path) : undefined}
       >
-        <link rel="preconnect" href="https://d1wa56x8uvnqfp.cloudfront.net" />
         {cover?.width && (
           <meta
             key="og_img_width"
@@ -50,6 +50,53 @@ const Work = ({ work }: Props) => {
           />
         )}
       </Meta>
+      <Head>
+        <link rel="preconnect" href="https://d1wa56x8uvnqfp.cloudfront.net" />
+        <script
+          key="work_json"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Painting',
+              name: work.title,
+              accessMode: 'visual',
+              abstract: `This ${work.date} artwork on ${work.medium} is part of Christopher Campbell’s Dispersions exhibition inspired by COVID-19.`,
+              url: `https://dispersions.cbcampbell.com/works/${work.worklist}`,
+              size: `${formatDimsCm(work)} (${formatDimsIn(work)})`,
+              thumbnailUrl: imageUrl(
+                `/worklist/${work.worklist}_0_thumbnail.jpg`,
+              ),
+              creativeWorkStatus: 'Published',
+              copyrightYear: 2020,
+              creditText: 'Artwork by Christopher Campbell',
+              author: {
+                '@type': 'Person',
+                email: 'mailto:c.b.campbell@icloud.com',
+                jobTitle: 'Artist',
+                name: 'Christopher Campbell',
+                url: 'https://cbcampbell.com',
+              },
+              copyrightHolder: {
+                '@type': 'Person',
+                email: 'mailto:c.b.campbell@icloud.com',
+                jobTitle: 'Artist',
+                name: 'Christopher Campbell',
+                url: 'https://cbcampbell.com',
+              },
+              image: cover
+                ? {
+                    '@type': 'ImageObject',
+                    url: imageUrl(cover.path),
+                    description: cover.caption || work.worklist,
+                    height: cover.height,
+                    width: cover.width,
+                  }
+                : undefined,
+            }),
+          }}
+        />
+      </Head>
       <Box
         as="article"
         sx={{
