@@ -6,6 +6,7 @@ import {
   formatDimsCm,
   formatDimsIn,
   WorklistNumber,
+  imageUrl,
 } from '@/lib/worklist'
 import { Grid as GridIcon } from '@/components/icons'
 import Meta from '@/components/meta'
@@ -17,6 +18,7 @@ type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
   const [caption, setCaption] = useState<string>('')
+  const cover = work.images[0]
 
   return (
     <Grid
@@ -30,7 +32,24 @@ const Work = ({ work }: Props) => {
       <Meta
         title={work.title.replace('Dispersions,', 'Artwork')}
         description={`This ${work.date} artwork on ${work.medium} is part of Christopher Campbell’s Dispersions exhibition inspired by COVID-19.`}
-      />
+        image={cover ? imageUrl(cover.path) : undefined}
+      >
+        <link rel="preconnect" href="https://d1wa56x8uvnqfp.cloudfront.net" />
+        {cover?.width && (
+          <meta
+            key="og_img_width"
+            property="og:image:width"
+            content={cover.width.toString()}
+          />
+        )}
+        {cover?.height && (
+          <meta
+            key="og_img_height"
+            property="og:image:height"
+            content={cover.height.toString()}
+          />
+        )}
+      </Meta>
       <Box
         as="article"
         sx={{
@@ -41,7 +60,7 @@ const Work = ({ work }: Props) => {
           transform: [null, 'translateY(1.25em)'], // compensate for caption
         }}
       >
-        <NextLink href="/works" passHref>
+        <NextLink href="/works" scroll={false} passHref>
           <Link
             sx={{
               mb: 3,
