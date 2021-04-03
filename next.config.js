@@ -5,6 +5,6 @@ module.exports = withMDX({
   },
   pageExtensions: ['js', 'ts', 'tsx', 'mdx'],
   images: {
-    domains: ['images.squarespace-cdn.com'],
+    domains: ['images.squarespace-cdn.com', 'd1wa56x8uvnqfp.cloudfront.net'],
   },
 })

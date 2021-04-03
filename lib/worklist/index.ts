@@ -3,9 +3,9 @@ import { map, find } from 'lodash'
 
 export const getFullWorklist = (): Array<Artwork> => fullWorklist
 
-export const worklistNumbers: Array<string> = map(fullWorklist, 'worklist') 
+export const worklistNumbers: Array<string> = map(fullWorklist, 'worklist')
 
-type ElementType < T extends ReadonlyArray < unknown > > = T extends ReadonlyArray<
+type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<
   infer ElementType
 >
   ? ElementType
@@ -20,3 +20,11 @@ export const formatDimsCm = (work: Artwork): string =>
 
 export const formatDimsIn = (work: Artwork): string =>
   `${work.dim.inW} × ${work.dim.inH} in`
+
+export const imageUrl = (path: string): string => {
+  // if (process.env.NODE_ENV === 'development') return path
+  return (
+    'https://d1wa56x8uvnqfp.cloudfront.net' +
+    path.replace(/^\//, '/dispersions-')
+  )
+}

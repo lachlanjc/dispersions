@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 import { colors } from '@/lib/theme'
 
 const makeTitle = (title: string, name: string): string =>
@@ -11,7 +11,7 @@ interface Props extends PropsWithChildren<any> {
   description?: string
   image?: string
   url?: string
-  children?: JSX.Element
+  children?: ReactNode[]
 }
 
 const color: string = colors.black

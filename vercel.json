@@ -4,11 +4,11 @@
   "rewrites": [
     {
       "source": "/assets/:path*",
-      "destination": "https://cbcampbell-exhibition.s3.amazonaws.com/assets/:path*"
+      "destination": "https://d1wa56x8uvnqfp.cloudfront.net/dispersions-assets/:path*"
     },
     {
       "source": "/worklist/:path*",
-      "destination": "https://cbcampbell-exhibition.s3.amazonaws.com/worklist/:path*"
+      "destination": "https://d1wa56x8uvnqfp.cloudfront.net/dispersions-worklist/:path*"
     }
   ]
 }

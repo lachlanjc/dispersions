@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Box, IconButton, ThemeUIStyleObject } from 'theme-ui'
 import { ChevronPrev, ChevronNext } from './icons'
 import Image from 'next/image'
+import { imageUrl } from '@/lib/worklist'
 
 type Props = { images: Image[]; onCaption: (c: string) => void }
 
@@ -118,7 +119,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
             }}
           >
             <Image
-              src={img.path}
+              src={imageUrl(img.path)}
               alt={img.caption}
               width={img.width}
               height={img.height}
