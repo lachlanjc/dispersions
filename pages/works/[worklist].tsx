@@ -19,7 +19,7 @@ type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
   const [caption, setCaption] = useState<string>('')
-  const cover = work.images[0]
+  const cover = work.images[1]
 
   return (
     <Grid
@@ -147,7 +147,7 @@ const Work = ({ work }: Props) => {
           {caption}
         </Text>
       </Box>
-      <Gallery images={work.images} onCaption={setCaption} />
+      <Gallery images={work.images.filter((img, i) => i > 0)} onCaption={setCaption} />
     </Grid>
   )
 }
@@ -161,6 +161,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { worklist } }: Params) {
   const work = getWork(worklist)
-  work.images = work.images.filter(i => !i.path.includes('thumbnail'))
+  // work.images = work.images.filter(i => !i.path.includes('thumbnail'))
   return { props: { work }, revalidate: false }
 }
