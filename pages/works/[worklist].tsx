@@ -147,7 +147,7 @@ const Work = ({ work }: Props) => {
           {caption}
         </Text>
       </Box>
-      <Gallery images={work.images.filter((img, i) => i > 0)} onCaption={setCaption} />
+      <Gallery images={work.images} onCaption={setCaption} />
     </Grid>
   )
 }
