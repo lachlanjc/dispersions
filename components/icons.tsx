@@ -1,3 +1,5 @@
+import { ComponentProps } from 'react'
+
 export const ChevronNext = (props?: Object) => (
   <svg
     fillRule="evenodd"
@@ -63,6 +65,24 @@ export const ArrowLeft = ({ ...props }) => (
   >
     <path d="M19 12H5" />
     <path d="M12 19L5 12L12 5" />
+  </svg>
+)
+
+export const Cross = (props?: ComponentProps<'svg'>) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={24}
+    height={24}
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    fill="none"
+    shapeRendering="geometricPrecision"
+    {...props}
+  >
+    <path d="M18 6L6 18" />
+    <path d="M6 6l12 12" />
   </svg>
 )
 

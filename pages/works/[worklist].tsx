@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Grid, Heading, Text, Link, Box } from 'theme-ui'
+import { Grid, Heading, Text, Link, Box, Button } from 'theme-ui'
 import {
   getWork,
   worklistNumbers,
@@ -13,13 +13,25 @@ import Gallery from '@/components/gallery'
 import Meta from '@/components/meta'
 import Head from 'next/head'
 import NextLink from 'next/link'
+import InquireModal from '@/components/inquire-modal'
+import { tail } from 'lodash'
 
 type Props = { work: Artwork }
 type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
   const [caption, setCaption] = useState<string>('')
-  const cover = work.images[1]
+  const cover = work.images[1] // .filter(i => i.path.includes('copywork'))?.[0]
+  const [inquiring, setInquiring] = useState<boolean>(false)
+  // const router = useRouter()
+  const startInquiring = () => {
+    setInquiring(true)
+    // router.push(`/works/${work.worklist}/inquire`, initialPath, { shallow: true })
+  }
+  const stopInquiring = () => {
+    setInquiring(false)
+    // router.push(`/works/${work.worklist}`, initialPath, { shallow: true })
+  }
 
   return (
     <Grid
@@ -129,9 +141,16 @@ const Work = ({ work }: Props) => {
         <Text as="p" mb={1}>
           {work.medium}
         </Text>
-        <Text as="p" mb={1}>
+        <Text as="p" mb={[3, 4]}>
           {formatDimsCm(work)} ({formatDimsIn(work)})
         </Text>
+        <Button
+          onClick={startInquiring}
+          variant="outline"
+          sx={{ color: 'text' }}
+        >
+          Inquire
+        </Button>
         <Text
           as="p"
           sx={{
@@ -148,6 +167,7 @@ const Work = ({ work }: Props) => {
         </Text>
       </Box>
       <Gallery images={work.images} onCaption={setCaption} />
+      {inquiring && <InquireModal open onClose={stopInquiring} work={work} />}
     </Grid>
   )
 }

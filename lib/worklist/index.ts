@@ -13,7 +13,8 @@ type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<
 export type WorklistNumber = ElementType<typeof worklistNumbers>
 
 export const getWork = (id: WorklistNumber): Artwork =>
-  find(fullWorklist, ['worklist', id]) as Artwork
+  fullWorklist.filter(w => w.worklist === id)[0]
+// find(fullWorklist, ['worklist', id]) as Artwork
 
 export const formatDimsCm = (work: Artwork): string =>
   `${work.dim.cmW} × ${work.dim.cmH} cm`
