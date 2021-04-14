@@ -12,6 +12,7 @@ import { ArrowRight, ChevronNext } from '@/components/icons'
 import { colors } from '@/lib/theme'
 import { getWork, imageUrl } from '@/lib/worklist'
 import Link from 'next/link'
+import Work from '@/components/work'
 
 const StickyWork = ({ work }: { work: Artwork }) => {
   const cover = work.images[0]
@@ -257,6 +258,33 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       muted
       loop
     />
+    <Grid
+      variant="layout.container"
+      columns={[2, 3]}
+      gap={[3, 4, 5]}
+      py={[4, 5]}
+    >
+      <Work work={works.eleven} />
+      <Work work={works.twentyEight} />
+      <Work work={works.fourtySix} />
+    </Grid>
+    <Box sx={{ textAlign: 'center', pb: [4, 5] }}>
+      <NextLink href="/works" passHref>
+        <Button
+          as="a"
+          variant="outlineLg"
+          sx={{
+            boxShadow: 'none',
+            color: 'text',
+            display: 'inline-flex',
+            alignItems: 'center',
+          }}
+        >
+          <span>View all works</span>
+          <ArrowRight strokeWidth={2.5} />
+        </Button>
+      </NextLink>
+    </Box>
   </>
 )
 
@@ -264,6 +292,9 @@ export default Exhibition
 
 export async function getStaticProps() {
   const works = {
+    eleven: getWork('2.2020.016'),
+    twentyEight: getWork('2.2020.034'),
+    fourtySix: getWork('2.2020.052'),
     thirtyThree: getWork('2.2020.039'),
     fourtyEight: getWork('2.2020.057'),
   }
