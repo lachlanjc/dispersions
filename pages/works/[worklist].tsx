@@ -21,7 +21,7 @@ type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
   const [caption, setCaption] = useState<string>('')
-  const cover = work.images[1] // .filter(i => i.path.includes('copywork'))?.[0]
+  const cover = work.images.filter(i => i.path.includes('copywork'))?.[0]
   const [inquiring, setInquiring] = useState<boolean>(false)
   // const router = useRouter()
   const startInquiring = () => {
@@ -180,7 +180,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { worklist } }: Params) {
-  const work = getWork(worklist)
-  // work.images = work.images.filter(i => !i.path.includes('thumbnail'))
+  const data = getWork(worklist)
+  const work = {
+    ...data,
+    images: data.images.filter(i => !i.path.includes('_0_')),
+  }
   return { props: { work }, revalidate: false }
 }
