@@ -1,4 +1,4 @@
-import { Grid, Box, Button, Flex, Container, Heading } from 'theme-ui'
+import { Grid, Box, Button, Flex, Container, Text, Heading } from 'theme-ui'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import Vimeo from '@u-wave/react-vimeo'
@@ -10,48 +10,110 @@ import ExcerptThirtyThree from '@/components/writing/excerpt-33.mdx'
 import ExcerptFourtyEight from '@/components/writing/excerpt-48.mdx'
 import { ArrowRight, ChevronNext } from '@/components/icons'
 import { colors } from '@/lib/theme'
-import { getWork } from '@/lib/worklist'
-import Work from '@/components/work'
+import { getWork, imageUrl } from '@/lib/worklist'
+import Link from 'next/link'
 
-const StickyWork = ({ work }: { work: Artwork }) => (
-  <Box
-    as="section"
-    sx={{ p: [3, 4], position: 'sticky', top: 0, width: '100%', bg: 'white' }}
-  >
-    <Container variant="narrow">
-      <Work work={work} />
-    </Container>
-  </Box>
-)
+const StickyWork = ({ work }: { work: Artwork }) => {
+  const cover = work.images[0]
+  return (
+    <Box
+      as="aside"
+      id={work.worklist}
+      sx={{
+        p: 3,
+        width: '100%',
+        position: 'sticky',
+        top: 0,
+        left: [null, null, 0],
+        maxWidth: [null, null, 256],
+        bg: 'white',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Link href={`/works/${work.worklist}`} passHref>
+        <Grid
+          as="a"
+          target="_blank"
+          columns={['128px 1fr', null, '1fr']}
+          gap={3}
+          sx={{
+            alignItems: 'center',
+            textAlign: [null, null, 'center'],
+            textDecoration: 'none',
+            maxWidth: 512,
+            mx: 'auto',
+            color: 'text',
+            transition: '0.125s color ease-in-out',
+            ':hover,:focus': {
+              color: 'muted',
+            },
+          }}
+        >
+          {cover && (
+            <Image
+              src={imageUrl(cover.path)}
+              alt={cover.caption}
+              width={cover.width}
+              height={cover.height}
+              objectFit="contain"
+            />
+          )}
+          <Box>
+            <Text
+              as="strong"
+              sx={{
+                display: 'block',
+                fontSize: [2, 3],
+              }}
+            >
+              {work.title}
+            </Text>
+            <Text as="span" variant="caption">
+              View gallery &rarr;
+            </Text>
+          </Box>
+        </Grid>
+      </Link>
+    </Box>
+  )
+}
 
 const Waterfall = ({ children }: { children: any }) => {
   return (
     <Container
-      as="section"
-      variant="copy"
+      as="article"
       sx={{
+        px: 0,
+        maxWidth: ['copy', null, 'copyPlus'],
+        my: [4, 5],
         ul: {
-          p: 0,
-          mt: [4, 5],
+          pl: 0,
           listStyle: 'none',
-          display: 'grid',
-          // gridTemplateColumns: [null, 'repeat(2, 1fr)'],
-          gridGap: [3, 4],
         },
         li: {
+          bg: 'white',
+          p: 4,
+          my: 0,
           fontSize: 2,
           display: 'flex',
+          flexDirection: ['column', null, 'row'],
+          justifyContent: 'center',
           alignItems: 'center',
           '&:nth-of-type(even)': {
             ml: [null, -4, -5],
           },
+          '&:nth-of-type(3)': {
+            mr: [null, -4, -5],
+          },
         },
         img: {
           order: -1,
-          mr: [3, 4],
+          mr: [null, 3, 4],
+          mb: [3, 4, 0],
           display: 'block',
           maxHeight: 400,
-          maxWidth: 400,
+          maxWidth: [null, 400],
           mx: 'auto',
         },
       }}
@@ -61,7 +123,7 @@ const Waterfall = ({ children }: { children: any }) => {
   )
 }
 
-const Exhibition = ({ works }: { works: Artwork[] }) => (
+const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
   <>
     <Meta title="Intro" />
     <Flex
@@ -106,7 +168,7 @@ const Exhibition = ({ works }: { works: Artwork[] }) => (
           as="h1"
           variant="ultratitle"
           sx={{
-            fontSize: [4, 6, 7, 8],
+            fontSize: [4, 6, null, 7, 8],
             letterSpacing: '.15em',
             textTransform: 'uppercase',
             mb: [4, 5],
@@ -173,19 +235,20 @@ const Exhibition = ({ works }: { works: Artwork[] }) => (
         <Abstract />
       </Container>
     </Box>
-    <Box as="section" sx={{ py: [4, 5] }}>
-      <Grid variant="layout.container" gap={[4, 5]} columns={[null, '2fr 3fr']}>
-        <Work work={works.fourtyEight} img={1} />
+    <Box as="section" sx={{ pt: 5 }}>
+      <StickyWork work={works.fourtyEight} />
+      {/* <Grid variant="layout.container" gap={[4, 5]} columns={[null, '2fr 3fr']}>
         <Container variant="copy" sx={{ fontSize: 2 }}>
           <ExcerptFourtyEight />
         </Container>
-      </Grid>
-      <Container>
-        <StickyWork work={works.thirtyThree} />
-        <Waterfall>
-          <ExcerptThirtyThree />
-        </Waterfall>
-      </Container>
+      </Grid> */}
+      <Waterfall>
+        <ExcerptFourtyEight />
+      </Waterfall>
+      <StickyWork work={works.thirtyThree} />
+      <Waterfall>
+        <ExcerptThirtyThree />
+      </Waterfall>
     </Box>
     <Video
       mux="rlyfZBce1Bne42x00hISDPmI9vHZJmgqAnQkBw01UnnP4"
