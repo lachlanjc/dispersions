@@ -223,7 +223,6 @@ const theme: Theme = {
       fontWeight: 'bold',
       borderRadius: 0,
       textShadow: 'none',
-      // boxShadow: 'card',
       WebkitTapHighlightColor: 'transparent',
       transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
       overflow: 'hidden',
@@ -307,7 +306,6 @@ const theme: Theme = {
       },
     },
     translucentDark: {
-      // variant: 'cards.primary',
       backgroundColor: 'rgba(0, 0, 0, 0.875)',
       color: 'white',
       boxShadow: 'none',

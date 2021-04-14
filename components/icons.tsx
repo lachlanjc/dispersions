@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react'
 
-export const ChevronNext = (props?: Object) => (
+export const ChevronNext = (props?: ComponentProps<'svg'>) => (
   <svg
     fillRule="evenodd"
     clipRule="evenodd"
@@ -18,7 +18,7 @@ export const ChevronNext = (props?: Object) => (
   </svg>
 )
 
-export const ChevronPrev = (props?: Object) => (
+export const ChevronPrev = (props?: ComponentProps<'svg'>) => (
   <svg
     fillRule="evenodd"
     clipRule="evenodd"
@@ -86,7 +86,7 @@ export const Cross = (props?: ComponentProps<'svg'>) => (
   </svg>
 )
 
-export const Grid = (props?: Object) => (
+export const Grid = (props?: ComponentProps<'svg'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={18}
