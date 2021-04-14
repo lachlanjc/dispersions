@@ -1,8 +1,8 @@
 import { Grid, Box, Heading } from 'theme-ui'
 import Image from 'next/image'
 import Meta from '@/components/meta'
-import Bio from '@/components/about/bio.mdx'
-import Tools from '@/components/about/tools.mdx'
+import Bio from '@/components/writing/bio.mdx'
+import Tools from '@/components/writing/tools.mdx'
 
 const About = () => (
   <>

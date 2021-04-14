@@ -48,7 +48,7 @@ export const colors = {
 const fonts = `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif`
 
 const theme: Theme = {
-  breakpoints: [32, 48, 64, 96, 128].map(w => `${w}em`),
+  breakpoints: [32, 48, 64, 96, 128, 160].map(w => `${w}em`),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 32, 48, 64, 96, 128, 160, 192],
   colors: {
