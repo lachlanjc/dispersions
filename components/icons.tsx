@@ -1,4 +1,6 @@
-export const ChevronNext = (props?: Object) => (
+import { ComponentProps } from 'react'
+
+export const ChevronNext = (props?: ComponentProps<'svg'>) => (
   <svg
     fillRule="evenodd"
     clipRule="evenodd"
@@ -16,7 +18,7 @@ export const ChevronNext = (props?: Object) => (
   </svg>
 )
 
-export const ChevronPrev = (props?: Object) => (
+export const ChevronPrev = (props?: ComponentProps<'svg'>) => (
   <svg
     fillRule="evenodd"
     clipRule="evenodd"
@@ -66,7 +68,25 @@ export const ArrowLeft = ({ ...props }) => (
   </svg>
 )
 
-export const Grid = (props?: Object) => (
+export const Cross = (props?: ComponentProps<'svg'>) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={24}
+    height={24}
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    fill="none"
+    shapeRendering="geometricPrecision"
+    {...props}
+  >
+    <path d="M18 6L6 18" />
+    <path d="M6 6l12 12" />
+  </svg>
+)
+
+export const Grid = (props?: ComponentProps<'svg'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={18}

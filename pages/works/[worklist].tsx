@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Grid, Heading, Text, Link, Box } from 'theme-ui'
+import { Grid, Heading, Text, Link, Box, Button } from 'theme-ui'
 import {
   getWork,
   worklistNumbers,
@@ -13,13 +13,15 @@ import Gallery from '@/components/gallery'
 import Meta from '@/components/meta'
 import Head from 'next/head'
 import NextLink from 'next/link'
+import InquireModal from '@/components/inquire-modal'
 
 type Props = { work: Artwork }
 type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
+  const cover = work.images.filter(i => i.path.includes('copywork'))?.[0]
   const [caption, setCaption] = useState<string>('')
-  const cover = work.images[1]
+  const [inquiring, setInquiring] = useState<boolean>(false)
 
   return (
     <Grid
@@ -129,9 +131,16 @@ const Work = ({ work }: Props) => {
         <Text as="p" mb={1}>
           {work.medium}
         </Text>
-        <Text as="p" mb={1}>
+        <Text as="p" mb={[3, 4]}>
           {formatDimsCm(work)} ({formatDimsIn(work)})
         </Text>
+        <Button
+          onClick={() => setInquiring(true)}
+          variant="outline"
+          sx={{ color: 'text' }}
+        >
+          Inquire
+        </Button>
         <Text
           as="p"
           sx={{
@@ -148,6 +157,11 @@ const Work = ({ work }: Props) => {
         </Text>
       </Box>
       <Gallery images={work.images} onCaption={setCaption} />
+      <InquireModal
+        open={inquiring}
+        onClose={() => setInquiring(false)}
+        work={work}
+      />
     </Grid>
   )
 }
@@ -160,7 +174,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { worklist } }: Params) {
-  const work = getWork(worklist)
-  // work.images = work.images.filter(i => !i.path.includes('thumbnail'))
+  const data = getWork(worklist)
+  const work = {
+    ...data,
+    images: data.images.filter(i => !i.path.includes('_0_')),
+  }
   return { props: { work }, revalidate: false }
 }

@@ -8,7 +8,7 @@ type Props = { work: Artwork; img?: number }
 const Work = ({ work, img = 0 }: Props) => {
   const cover = work.images[img]
   return (
-    <NextLink href={`/works/${work.worklist}`} prefetch={false} passHref>
+    <NextLink href={`/works/${work.worklist}`} passHref>
       <Link
         sx={{
           display: 'flex',

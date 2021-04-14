@@ -221,9 +221,8 @@ const theme: Theme = {
       cursor: 'pointer',
       fontFamily: 'heading',
       fontWeight: 'bold',
-      borderRadius: 'default',
+      borderRadius: 0,
       textShadow: 'none',
-      boxShadow: 'card',
       WebkitTapHighlightColor: 'transparent',
       transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
       overflow: 'hidden',
@@ -239,7 +238,7 @@ const theme: Theme = {
       variant: 'buttons.primary',
       bg: 'transparent',
       color: 'primary',
-      border: '3px solid currentColor',
+      border: '2px solid currentColor',
     },
     outlineLg: {
       variant: 'buttons.primary',
@@ -307,7 +306,6 @@ const theme: Theme = {
       },
     },
     translucentDark: {
-      // variant: 'cards.primary',
       backgroundColor: 'rgba(0, 0, 0, 0.875)',
       color: 'white',
       boxShadow: 'none',
