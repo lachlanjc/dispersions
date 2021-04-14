@@ -268,7 +268,7 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       <Work work={works.twentyEight} />
       <Work work={works.fourtySix} />
     </Grid>
-    <Box sx={{ textAlign: 'center', pb: [4, 5] }}>
+    <Box sx={{ textAlign: 'center', pb: [4, 5, 6] }}>
       <NextLink href="/works" passHref>
         <Button
           as="a"
