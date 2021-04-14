@@ -87,7 +87,7 @@ const InquireForm = ({ work }: { work: Artwork }) => {
         Inquire about purchasing
       </Heading>
       <Text as="p" variant="caption">
-        Works begin at $10k.
+        Works begin at $10k USD.
       </Text>
       <Work work={work} />
       <Box
