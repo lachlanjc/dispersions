@@ -167,7 +167,7 @@ const Work = ({ work }: Props) => {
         </Text>
       </Box>
       <Gallery images={work.images} onCaption={setCaption} />
-      {inquiring && <InquireModal open onClose={stopInquiring} work={work} />}
+      <InquireModal open={inquiring} onClose={stopInquiring} work={work} />
     </Grid>
   )
 }

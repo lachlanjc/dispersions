@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Box, Grid, Heading, Text, Textarea, Input, Button } from 'theme-ui'
 import Image from 'next/image'
 import { imageUrl } from '@/lib/worklist'
+import { useForm, ValidationError } from '@formspree/react'
 
 type Props = { work: Artwork; img?: number }
 
@@ -67,6 +68,19 @@ const Field = ({ label, children }: { label: string; children: ReactNode }) => (
 )
 
 const InquireForm = ({ work }: { work: Artwork }) => {
+  const [state, handleSubmit] = useForm('xrgrgnrl')
+  if (state.succeeded) {
+    return (
+      <Box sx={{ py: [4, 5], textAlign: 'center' }}>
+        <Heading variant="title" sx={{ fontSize: [3, 4], mb: 2 }}>
+          Thanks for your inquiry.
+        </Heading>
+        <Text as="p" variant="caption">
+          You’ll hear back from me soon.
+        </Text>
+      </Box>
+    )
+  }
   return (
     <>
       <Heading variant="title" sx={{ fontSize: [3, 4], mb: 2 }}>
@@ -76,17 +90,22 @@ const InquireForm = ({ work }: { work: Artwork }) => {
         Works begin at $10k.
       </Text>
       <Work work={work} />
-      <Box as="form" sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box
+        as="form"
+        onSubmit={handleSubmit}
+        sx={{ display: 'flex', flexDirection: 'column' }}
+      >
+        <input type="hidden" name="worklist" value={work.worklist} />
         <Field label="Name">
-          <Input type="text" name="name" />
+          <Input type="text" name="name" required />
         </Field>
         <Field label="Email">
-          <Input type="email" name="email" />
+          <Input type="email" name="email" required />
         </Field>
         <Field label="Message">
           <Textarea
             name="message"
-            defaultValue="I would like to know more about this work. Please send me further details on pricing and availability."
+            defaultValue={`I would like to know more about this ${work.title}. Please send me further details on pricing and availability.`}
           />
         </Field>
         <Button
