@@ -35,6 +35,9 @@ const StickyWork = ({ work }: { work: Artwork }) => {
       <Link href={`/works/${work.worklist}`} passHref>
         <Grid
           as="a"
+          {
+            /* @ts-ignore Theme UI doesn't use <a> types */ ...null
+          }
           target="_blank"
           columns={['128px 1fr', null, '1fr']}
           gap={3}
