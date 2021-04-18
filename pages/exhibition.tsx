@@ -270,9 +270,9 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       gap={[3, 4, 5]}
       sx={{ py: [4, 5] }}
     >
-      <Work work={works.eleven} />
-      <Work work={works.twentyEight} />
-      <Work work={works.fourtySix} />
+      <Work work={works.oneFive} />
+      <Work work={works.threeZero} />
+      <Work work={works.fourFour} />
     </Grid>
     <Box sx={{ textAlign: 'center', pb: [4, 5, 6] }}>
       <NextLink href="/works" passHref>
@@ -298,11 +298,12 @@ export default Exhibition
 
 export async function getStaticProps() {
   const works = {
-    eleven: getWork('2.2020.016'),
-    twentyEight: getWork('2.2020.034'),
-    fourtySix: getWork('2.2020.052'),
     thirtyThree: getWork('2.2020.039'),
     fourtyEight: getWork('2.2020.057'),
+
+    oneFive: getWork('2.2020.015'),
+    threeZero: getWork('2.2020.030'),
+    fourFour: getWork('2.2020.044'),
   }
   return { props: { works } }
 }
