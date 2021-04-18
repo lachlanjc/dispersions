@@ -8,7 +8,7 @@ import Video from '@/components/video'
 import Abstract from '@/components/writing/abstract.mdx'
 import ExcerptThirtyThree from '@/components/writing/excerpt-33.mdx'
 import ExcerptFourtyEight from '@/components/writing/excerpt-48.mdx'
-import { ArrowRight, ChevronNext } from '@/components/icons'
+import { ArrowRight } from '@/components/icons'
 import { colors } from '@/lib/theme'
 import { getWork, imageUrl } from '@/lib/worklist'
 import Link from 'next/link'
@@ -196,11 +196,17 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
         </NextLink>
       </Container>
     </Flex>
+    <Box as="section" sx={{ py: [4, 5] }}>
+      <Container variant="copy" sx={{ fontSize: 2 }}>
+        <Abstract />
+      </Container>
+    </Box>
     <Box
       as="section"
       sx={{
-        py: 5,
+        py: 4,
         bg: 'black',
+        height: ['auto', '100vh'],
       }}
     >
       <Box
@@ -235,9 +241,6 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
           showPortrait={false}
         />
       </Box>
-      <Container variant="copy" sx={{ p: { color: 'white' }, fontSize: 2 }}>
-        <Abstract />
-      </Container>
     </Box>
     <Box as="section" sx={{ pt: 5 }}>
       <StickyWork work={works.fourtyEight} />
@@ -265,7 +268,7 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       variant="layout.container"
       columns={[2, 3]}
       gap={[3, 4, 5]}
-      py={[4, 5]}
+      sx={{ py: [4, 5] }}
     >
       <Work work={works.eleven} />
       <Work work={works.twentyEight} />

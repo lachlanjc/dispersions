@@ -39,10 +39,6 @@ export const colors = {
   smoke: '#e0e0e4',
   snow: '#f5f5f7',
   white: '#ffffff',
-
-  // twitter: '#1da1f2',
-  // facebook: '#3b5998',
-  // instagram: '#e1306c',
 }
 
 const fonts = `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif`
