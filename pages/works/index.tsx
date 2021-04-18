@@ -11,7 +11,7 @@ const Works = ({ works }: { works: Array<Artwork> }) => (
       All works
     </Heading>
     <Paragraph as="p" variant="subtitle">
-      48 works on paper, made from April–December 2020.
+      {works.length} works on paper, made from April 2020–April 2021.
     </Paragraph>
     <Grid columns={[2, 3]} gap={[3, 4, 5]} mt={[4, 5]}>
       {works.map(work => (
