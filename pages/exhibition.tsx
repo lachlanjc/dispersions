@@ -89,7 +89,7 @@ const Waterfall = ({ children }: { children: any }) => {
       as="article"
       sx={{
         px: 0,
-        maxWidth: ['copy', null, 'copyPlus'],
+        maxWidth: ['copy', null, 'copyPlus', null, 'copyUltra'],
         my: [4, 5],
         ul: {
           pl: 0,
@@ -100,8 +100,9 @@ const Waterfall = ({ children }: { children: any }) => {
           p: 4,
           my: 0,
           fontSize: 2,
-          display: 'flex',
-          flexDirection: ['column', null, 'row'],
+          display: 'grid',
+          gridTemplateColumns: [null, '1fr 1fr'],
+          gridGap: [null, 3, 4],
           justifyContent: 'center',
           alignItems: 'center',
           '&:nth-of-type(even)': {
@@ -110,15 +111,11 @@ const Waterfall = ({ children }: { children: any }) => {
           '&:nth-of-type(3)': {
             mr: [null, -4, -5],
           },
-        },
-        img: {
-          order: -1,
-          mr: [null, 3, 4],
-          mb: [3, 4, 0],
-          display: 'block',
-          maxHeight: 400,
-          maxWidth: [null, 400],
-          mx: 'auto',
+          '> div, > img': {
+            maxWidth: ['100%', '400px !important'],
+            maxHeight: 400,
+            mx: 'auto !important',
+          },
         },
       }}
     >
@@ -207,6 +204,7 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
         py: 4,
         bg: 'black',
         height: ['auto', '100vh'],
+        maxHeight: 1024,
       }}
     >
       <Box
@@ -242,19 +240,26 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
         />
       </Box>
     </Box>
-    <Box as="section" sx={{ pt: 5 }}>
-      <StickyWork work={works.fourtyEight} />
+    <Box as="section" sx={{ pt: [5, null, 6], pb: [3, 4] }}>
+      <Heading
+        as="h1"
+        variant="title"
+        sx={{ textAlign: 'center', px: 3, pb: 3 }}
+      >
+        Two works in detail
+      </Heading>
       {/* <Grid variant="layout.container" gap={[4, 5]} columns={[null, '2fr 3fr']}>
         <Container variant="copy" sx={{ fontSize: 2 }}>
           <ExcerptFourtyEight />
         </Container>
       </Grid> */}
-      <Waterfall>
-        <ExcerptFourtyEight />
-      </Waterfall>
       <StickyWork work={works.thirtyThree} />
       <Waterfall>
         <ExcerptThirtyThree />
+      </Waterfall>
+      <StickyWork work={works.fourtyEight} />
+      <Waterfall>
+        <ExcerptFourtyEight />
       </Waterfall>
     </Box>
     <Video
