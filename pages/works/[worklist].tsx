@@ -180,5 +180,6 @@ export async function getStaticProps({ params: { worklist } }: Params) {
     ...data,
     images: tail(data.images),
   }
+  console.log(work.images)
   return { props: { work }, revalidate: false }
 }

@@ -1,4 +1,4 @@
-import { Grid, Box, Heading } from 'theme-ui'
+import { Grid, Box, Container, Heading } from 'theme-ui'
 import Image from 'next/image'
 import Meta from '@/components/meta'
 import Bio from '@/components/writing/bio.mdx'
@@ -12,7 +12,7 @@ const About = () => (
       gap={[4, 5]}
       columns={[null, '2fr 3fr']}
       as="header"
-      py={[4, 5, 6]}
+      py={[4, 5]}
       sx={{ alignItems: 'start' }}
     >
       <Image
@@ -32,27 +32,20 @@ const About = () => (
     <Image
       layout="responsive"
       width={4096}
-      height={1069}
+      height={1793}
       alt="Panorama of Christopher's studio"
-      src="/artist/studio_pano_3.jpg"
+      src="/artist/studio_pano_1.jpg"
     />
+    <Container as="section" variant="copy" sx={{ py: [4, 5], fontSize: 2 }}>
+      <Tools />
+    </Container>
     <Box as="section" bg="dark" py={[4, 5]}>
       <Grid
         variant="layout.wide"
         columns={[null, 2]}
         gap={[3, 4, 5]}
-        sx={{
-          px: [3, 4, 5],
-          p: {
-            color: 'white',
-            fontSize: 2,
-            maxWidth: 'copy',
-            mx: 'auto',
-            gridColumn: [null, 'span 2'],
-          },
-        }}
+        sx={{ px: [3, 4, 5] }}
       >
-        <Tools />
         <Image
           layout="responsive"
           width={4096}
@@ -64,9 +57,25 @@ const About = () => (
         <Image
           layout="responsive"
           width={4096}
-          height={2733}
-          alt="Stainless steel blades lined up"
-          src="/artist/blades.jpg"
+          height={3072}
+          alt="Christopher's studio on a sunny day"
+          src="/artist/studio.jpg"
+          sizes="40vw"
+        />
+        <Image
+          layout="responsive"
+          width={4096}
+          height={3072}
+          alt="Grouping of works on the floor"
+          src="/artist/grouping_floor.jpg"
+          sizes="40vw"
+        />
+        <Image
+          layout="responsive"
+          width={4096}
+          height={3072}
+          alt="Grouping of works on the floor"
+          src="/artist/grouping_zoom.jpg"
           sizes="40vw"
         />
       </Grid>
