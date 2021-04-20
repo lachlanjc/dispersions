@@ -14,7 +14,6 @@ import Meta from '@/components/meta'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import InquireModal from '@/components/inquire-modal'
-import { tail } from 'lodash'
 
 type Props = { work: Artwork }
 type Params = { params: { worklist: WorklistNumber } }
@@ -176,9 +175,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { worklist } }: Params) {
   const data = getWork(worklist)
+  const [thumbnail, ...images] = data.images
   const work = {
     ...data,
-    images: tail(data.images),
+    images,
   }
   console.log(work.images)
   return { props: { work }, revalidate: false }
