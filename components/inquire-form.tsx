@@ -18,6 +18,7 @@ const Work = ({ work, img = 0 }: Props) => {
         alignItems: 'center',
         textDecoration: 'none',
         color: 'text',
+        lineHeight: 'title',
       }}
     >
       {cover && (
@@ -105,7 +106,7 @@ const InquireForm = ({ work }: { work: Artwork }) => {
         <Field label="Message">
           <Textarea
             name="message"
-            defaultValue={`I would like to know more about this ${work.title}. Please send me further details on pricing and availability.`}
+            defaultValue={`I would like to know more about ${work.title}. Please send me further details on pricing and availability.`}
           />
         </Field>
         <Button
