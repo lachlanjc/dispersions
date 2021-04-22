@@ -89,7 +89,7 @@ const Waterfall = ({ children }: { children: any }) => {
       as="article"
       sx={{
         px: 0,
-        maxWidth: ['copy', null, 'copyPlus', null, 'copyUltra'],
+        maxWidth: ['copy', null, 'copyPlus', 'layout'],
         my: [4, 5],
         ul: {
           pl: 0,
@@ -105,15 +105,16 @@ const Waterfall = ({ children }: { children: any }) => {
           gridGap: [null, 3, 4],
           justifyContent: 'center',
           alignItems: 'center',
-          '&:nth-of-type(even)': {
-            ml: [null, -4, -5],
-          },
-          '&:nth-of-type(3)': {
-            mr: [null, -4, -5],
-          },
+          // '&:nth-of-type(even)': {
+          //   ml: [null, -4, -5],
+          // },
+          // '&:nth-of-type(3)': {
+          //   mr: [null, -4, -5],
+          // },
           '> div, > img': {
-            maxWidth: ['100%', '400px !important'],
-            maxHeight: 400,
+            backgroundColor: 'sunken',
+            // maxWidth: ['100%', '400px !important'],
+            maxHeight: ['50vh', 400, 512],
             mx: 'auto !important',
           },
         },
@@ -201,21 +202,26 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
     <Box
       as="section"
       sx={{
-        py: 4,
+        py: [4, 5],
         bg: 'black',
-        height: ['auto', '100vh'],
-        maxHeight: 1024,
       }}
     >
+      <Heading
+        as="h1"
+        variant="title"
+        sx={{ color: 'white', textAlign: 'center', pt: [3, 4], px: 3 }}
+      >
+        Watch the film
+      </Heading>
       <Box
         sx={{
-          px: [null, 4, 5],
+          px: [null, 4, 5, 6],
           mx: 'auto',
           '> div': {
             display: 'block',
             width: '100%',
             mx: 'auto',
-            maxWidth: [384, 512, null, 1024],
+            maxWidth: ['100%', 1200],
             height: 0,
             paddingBottom: `${(9 / 16) * 100}%`,
             position: 'relative',
@@ -240,11 +246,11 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
         />
       </Box>
     </Box>
-    <Box as="section" sx={{ pt: [5, null, 6], pb: [3, 4] }}>
+    <Box as="section" sx={{ pt: [4, null, 5], pb: [3, 4] }}>
       <Heading
         as="h1"
         variant="title"
-        sx={{ textAlign: 'center', px: 3, pb: 3 }}
+        sx={{ textAlign: 'center', p: [3, null, 4] }}
       >
         Two works in detail
       </Heading>
