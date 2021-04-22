@@ -1,7 +1,8 @@
 import fullWorklist from './worklist.json'
 import { map, find } from 'lodash'
 
-export const getFullWorklist = (): Array<Artwork> => fullWorklist
+export const getFullWorklist = (): Array<Artwork> =>
+  JSON.parse(JSON.stringify(fullWorklist))
 
 export const worklistNumbers: Array<string> = map(fullWorklist, 'worklist')
 

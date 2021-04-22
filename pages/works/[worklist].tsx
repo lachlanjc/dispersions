@@ -14,12 +14,13 @@ import Meta from '@/components/meta'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import InquireModal from '@/components/inquire-modal'
+import { tail } from 'lodash'
 
 type Props = { work: Artwork }
 type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work }: Props) => {
-  const cover = work.images.filter(i => i.path.includes('copywork'))?.[0]
+  const cover = work.images[0] // .filter(i => i.path.includes('copywork'))?.[0]
   const [caption, setCaption] = useState<string>('')
   const [inquiring, setInquiring] = useState<boolean>(false)
 
@@ -174,12 +175,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { worklist } }: Params) {
-  const data = getWork(worklist)
-  const [thumbnail, ...images] = data.images
-  const work = {
-    ...data,
-    images,
-  }
-  console.log(data.images.length, work.images.length, work.images?.[0]?.path)
+  const work = getWork(worklist)
+  work.images = tail(work.images) // Remove thumbnail
   return { props: { work }, revalidate: false }
 }
