@@ -102,7 +102,7 @@ const Waterfall = ({ children }: { children: any }) => {
           fontSize: 2,
           display: 'grid',
           gridTemplateColumns: [null, '1fr 1fr'],
-          gridGap: [null, 3, 4],
+          gridGap: [3, 4],
           justifyContent: 'center',
           alignItems: 'center',
           // '&:nth-of-type(even)': {
@@ -112,10 +112,12 @@ const Waterfall = ({ children }: { children: any }) => {
           //   mr: [null, -4, -5],
           // },
           '> div, > img': {
-            backgroundColor: 'sunken',
             // maxWidth: ['100%', '400px !important'],
             maxHeight: ['50vh', 400, 512],
             mx: 'auto !important',
+          },
+          img: {
+            bg: 'sunken',
           },
         },
       }}
@@ -202,14 +204,15 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
     <Box
       as="section"
       sx={{
-        py: [4, 5],
+        pt: [4, null, 5],
+        pb: 4,
         bg: 'black',
       }}
     >
       <Heading
         as="h1"
         variant="title"
-        sx={{ color: 'white', textAlign: 'center', pt: [3, 4], px: 3 }}
+        sx={{ color: 'white', textAlign: 'center', pt: [3, 4], p: 3 }}
       >
         Watch the film
       </Heading>

@@ -130,7 +130,7 @@ const theme: Theme = {
     title: {
       variant: 'text.heading',
       fontFamily: 'display',
-      fontSize: [5, 6],
+      fontSize: [4, 5, 6],
       letterSpacing: 'title',
       lineHeight: 'title',
     },
