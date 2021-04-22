@@ -39,13 +39,11 @@ const About = () => (
     <Container as="section" variant="copy" sx={{ py: [4, 5], fontSize: 2 }}>
       <Tools />
     </Container>
-    <Box as="section" bg="dark" py={[4, 5]}>
-      <Grid
-        variant="layout.wide"
-        columns={[null, 2]}
-        gap={[3, 4, 5]}
-        sx={{ px: [3, 4, 5] }}
-      >
+    <Box
+      as="section"
+      sx={{ bg: 'dark', py: [4, 5, null, 6], px: [3, 4, 5, 6] }}
+    >
+      <Grid columns={[null, 2]} gap={[3, 4, 5]}>
         <Image
           layout="responsive"
           width={4096}
