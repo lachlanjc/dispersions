@@ -2,13 +2,15 @@ import { useState } from 'react'
 import { Grid, Heading, Text, Link, Box, Button } from 'theme-ui'
 import {
   getWork,
+  getPrev,
+  getNext,
   worklistNumbers,
   formatDimsCm,
   formatDimsIn,
   WorklistNumber,
   imageUrl,
 } from '@/lib/worklist'
-import { Grid as GridIcon } from '@/components/icons'
+import { ArrowLeft, ArrowRight, Grid as GridIcon } from '@/components/icons'
 import Gallery from '@/components/gallery'
 import Meta from '@/components/meta'
 import Head from 'next/head'
@@ -16,10 +18,14 @@ import NextLink from 'next/link'
 import InquireModal from '@/components/inquire-modal'
 import { tail } from 'lodash'
 
-type Props = { work: Artwork }
+type Props = {
+  work: Artwork
+  prev: WorklistNumber | null
+  next: WorklistNumber | null
+}
 type Params = { params: { worklist: WorklistNumber } }
 
-const Work = ({ work }: Props) => {
+const Work = ({ work, prev, next }: Props) => {
   const cover = work.images[0] // .filter(i => i.path.includes('copywork'))?.[0]
   const [caption, setCaption] = useState<string>('')
   const [inquiring, setInquiring] = useState<boolean>(false)
@@ -34,7 +40,7 @@ const Work = ({ work }: Props) => {
       sx={{ alignItems: 'center', minHeight: '100vh' }}
     >
       <Meta
-        title={work.title.replace('Dispersions,', 'Artwork')}
+        title={work.title}
         description={`This ${work.date} artwork on ${work.medium} is part of Christopher Campbell’s Dispersions exhibition inspired by COVID-19.`}
         image={cover ? imageUrl(cover.path) : undefined}
       >
@@ -110,19 +116,48 @@ const Work = ({ work }: Props) => {
           transform: [null, 'translateY(1.25em)'], // compensate for caption
         }}
       >
-        <NextLink href="/works" scroll={false} passHref>
-          <Link
-            sx={{
-              mb: 3,
+        <Grid
+          columns="2fr 1fr 1fr"
+          gap={3}
+          sx={{
+            mb: 3,
+            maxWidth: ['100%', 330],
+            a: {
               display: 'flex',
               alignItems: 'center',
-              svg: { mr: 2 },
-            }}
-          >
-            <GridIcon />
-            All works
-          </Link>
-        </NextLink>
+            },
+            svg: {
+              flexShrink: 0,
+            },
+          }}
+        >
+          <NextLink href="/works" scroll={false} passHref>
+            <Link sx={{ svg: { mr: 2 } }}>
+              <GridIcon />
+              All works
+            </Link>
+          </NextLink>
+          {prev ? (
+            <NextLink href={`/works/${prev}`} passHref>
+              <Link sx={{ svg: { mr: 1 } }}>
+                <ArrowLeft />
+                Previous
+              </Link>
+            </NextLink>
+          ) : (
+            <span />
+          )}
+          {next ? (
+            <NextLink href={`/works/${next}`} passHref>
+              <Link sx={{ justifyContent: 'flex-end', svg: { ml: 1 } }}>
+                Next
+                <ArrowRight />
+              </Link>
+            </NextLink>
+          ) : (
+            <span />
+          )}
+        </Grid>
         <Heading as="h1" variant="headline" color="text" mb={0}>
           {work.title}
         </Heading>
@@ -177,5 +212,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { worklist } }: Params) {
   const work = getWork(worklist)
   work.images = tail(work.images) // Remove thumbnail
-  return { props: { work }, revalidate: false }
+  const prev = getPrev(worklist) || null
+  const next = getNext(worklist) || null
+  return { props: { work, prev, next }, revalidate: false }
 }

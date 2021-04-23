@@ -47,6 +47,13 @@ const ImageGallery = ({ images, onCaption }: Props) => {
     },
   })
 
+  // When work changes, start at first image & refresh slider
+  useEffect(() => {
+    setCurrentSlide(0)
+    slider?.refresh()
+    slider?.moveToSlide(0)
+  }, [images])
+
   // Stop the history navigation gesture on touch devices
   useEffect(() => {
     const preventNavigation = (event: TouchEvent) => {
