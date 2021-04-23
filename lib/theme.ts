@@ -28,6 +28,7 @@ export const colors = {
   red: '#FF5236',
   yellow: '#FF9300',
   blue: '#06c',
+  blueDark: '#05a',
 
   darker: '#121217',
   dark: '#17171d',
@@ -50,6 +51,7 @@ const theme: Theme = {
   colors: {
     ...colors,
     primary: colors.blue,
+    primaryDark: colors.blueDark,
     accent: colors.red,
     inverted: colors.white,
 
@@ -286,7 +288,7 @@ const theme: Theme = {
       textDecoration: 'none',
       WebkitTapHighlightColor: 'transparent',
       transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
-      ':hover,:focus': {
+      ':focus,:hover': {
         transform: 'scale(1.0625)',
         boxShadow: 'elevated',
       },
@@ -316,7 +318,7 @@ const theme: Theme = {
     input: {
       color: 'text',
       fontFamily: 'inherit',
-      borderRadius: 'base',
+      borderRadius: 0,
       border: 0,
       '::-webkit-input-placeholder': { color: 'placeholder' },
       '::-moz-placeholder': { color: 'placeholder' },
@@ -412,6 +414,9 @@ const theme: Theme = {
     a: {
       color: 'primary',
       textDecoration: 'inherit',
+      ':focus,:hover': {
+        color: 'primaryDark',
+      },
     },
     pre: {
       fontFamily: 'monospace',
