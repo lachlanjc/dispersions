@@ -1,8 +1,9 @@
-import { Grid, Box, Container, Heading } from 'theme-ui'
+import { Grid, Box, Container, Heading, Button } from 'theme-ui'
 import Image from 'next/image'
 import Meta from '@/components/meta'
 import Bio from '@/components/writing/bio.mdx'
 import Tools from '@/components/writing/tools.mdx'
+import { ArrowRight } from '@/components/icons'
 
 const About = () => (
   <>
@@ -36,12 +37,30 @@ const About = () => (
       alt="Panorama of Christopher's studio"
       src="/artist/studio_pano_1.jpg"
     />
-    <Container as="section" variant="copy" sx={{ py: [4, 5], fontSize: 2 }}>
+    <Container
+      as="section"
+      sx={{
+        pt: [4, 5, 6],
+        pb: [4, 5],
+        fontSize: 2,
+        p: {
+          variant: 'layout.copy',
+          pt: [3, 4],
+          pb: [4, 5],
+        },
+        img: { bg: 'sunken' },
+      }}
+    >
       <Tools />
     </Container>
     <Box
       as="section"
-      sx={{ bg: 'dark', py: [4, 5, null, 6], px: [3, 4, null, 5, 6] }}
+      sx={{
+        bg: 'black',
+        py: [4, 5],
+        px: [3, 4, null, 5, 6],
+        img: { bg: '#111' },
+      }}
     >
       <Grid columns={[null, 2]} gap={[3, 4, 5]}>
         <Image
@@ -73,10 +92,27 @@ const About = () => (
           width={4096}
           height={3072}
           alt="Grouping of works on the floor"
-          src="/artist/grouping_zoom.jpg"
+          src="/artist/studio_work.jpg"
           sizes="40vw"
         />
       </Grid>
+    </Box>
+    <Box sx={{ textAlign: 'center', pt: [4, 5], pb: [4, 5, 6] }}>
+      <Button
+        as="a"
+        href="https://cbcampbell.com/works"
+        target="_blank"
+        variant="outlineLg"
+        sx={{
+          boxShadow: 'none',
+          color: 'text',
+          display: 'inline-flex',
+          alignItems: 'center',
+        }}
+      >
+        <span>View full portfolio</span>
+        <ArrowRight strokeWidth={2.5} />
+      </Button>
     </Box>
   </>
 )
