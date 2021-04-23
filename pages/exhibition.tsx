@@ -116,9 +116,6 @@ const Waterfall = ({ children }: { children: any }) => {
             maxHeight: ['50vh', 400, 512],
             mx: 'auto !important',
           },
-          img: {
-            bg: 'sunken',
-          },
         },
       }}
     >

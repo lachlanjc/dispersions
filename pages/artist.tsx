@@ -41,7 +41,7 @@ const About = () => (
     </Container>
     <Box
       as="section"
-      sx={{ bg: 'dark', py: [4, 5, null, 6], px: [3, 4, 5, 6] }}
+      sx={{ bg: 'dark', py: [4, 5, null, 6], px: [3, 4, null, 5, 6] }}
     >
       <Grid columns={[null, 2]} gap={[3, 4, 5]}>
         <Image
