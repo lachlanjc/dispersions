@@ -3,7 +3,7 @@
 node_modules
 .DS_Store
 .env
-public/assets
+public/artist
 public/excerpts
 public/worklist
 public/icons

@@ -3,8 +3,8 @@
   "github": { "silent": true },
   "rewrites": [
     {
-      "source": "/assets/:path*",
-      "destination": "https://d1wa56x8uvnqfp.cloudfront.net/dispersions-assets/:path*"
+      "source": "/artist/:path*",
+      "destination": "https://d1wa56x8uvnqfp.cloudfront.net/dispersions-artist/:path*"
     },
     {
       "source": "/excerpts/:path*",
