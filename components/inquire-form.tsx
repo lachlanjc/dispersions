@@ -19,6 +19,7 @@ const Work = ({ work, img = 0 }: Props) => {
         textDecoration: 'none',
         color: 'text',
         lineHeight: 'title',
+        img: { bg: 'sunken' },
       }}
     >
       {cover && (
@@ -102,6 +103,9 @@ const InquireForm = ({ work }: { work: Artwork }) => {
         </Field>
         <Field label="Email">
           <Input type="email" name="email" required />
+        </Field>
+        <Field label="City">
+          <Input type="text" name="city" />
         </Field>
         <Field label="Message">
           <Textarea

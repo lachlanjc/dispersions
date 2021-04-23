@@ -33,6 +33,7 @@ const InquireModal = ({
       sx={{
         p: 3,
         color: 'secondary',
+        cursor: 'pointer',
         width: 'auto',
         height: 'auto',
         position: 'absolute',
