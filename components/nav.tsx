@@ -21,9 +21,6 @@ const Nav = () => (
       },
     }}
   >
-    <Link href="/" passHref>
-      <NavLink>/</NavLink>
-    </Link>
     <Link href="/exhibition" passHref>
       <NavLink>Exhibition</NavLink>
     </Link>
