@@ -10,6 +10,7 @@ interface Artwork {
   title: string
   date: string
   medium: string
+  reserved: boolean
   dim: {
     cmW: string
     cmH: string
