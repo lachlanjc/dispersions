@@ -7,7 +7,7 @@ import BGImg from '@/components/bg-img'
 import Video from '@/components/video'
 import Abstract from '@/components/writing/abstract.mdx'
 import ExcerptThirtyThree from '@/components/writing/excerpt-33.mdx'
-import ExcerptFourtyEight from '@/components/writing/excerpt-48.mdx'
+import ExcerptFifty from '@/components/writing/excerpt-50.mdx'
 import { ArrowRight } from '@/components/icons'
 import { colors } from '@/lib/theme'
 import { getWork, imageUrl } from '@/lib/worklist'
@@ -131,7 +131,7 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       as="header"
       sx={{
         position: 'relative',
-        minHeight: '97vh',
+        minHeight: '87vh',
         bg: 'secondary',
         placeItems: 'center',
       }}
@@ -177,24 +177,13 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
         >
           Dispersions
         </Heading>
-        <NextLink href="/works" passHref>
-          <Button
-            as="a"
-            variant="outlineLg"
-            sx={{
-              color: 'smoke',
-              display: 'inline-flex',
-              alignItems: 'center',
-            }}
-          >
-            <span>View all works</span>
-            <ArrowRight strokeWidth={2.5} />
-          </Button>
-        </NextLink>
       </Container>
     </Flex>
     <Box as="section" sx={{ py: [4, 5] }}>
       <Container variant="copy" sx={{ fontSize: 2 }}>
+        <Heading as="h1" variant="headline" sx={{ textAlign: 'center' }}>
+          Introduction
+        </Heading>
         <Abstract />
       </Container>
     </Box>
@@ -211,7 +200,7 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
         variant="title"
         sx={{ color: 'white', textAlign: 'center', pt: [3, 4], p: 3 }}
       >
-        Watch the film
+        Artist statement
       </Heading>
       <Box
         sx={{
@@ -263,9 +252,9 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       <Waterfall>
         <ExcerptThirtyThree />
       </Waterfall>
-      <StickyWork work={works.fourtyEight} />
+      <StickyWork work={works.fifty} />
       <Waterfall>
-        <ExcerptFourtyEight />
+        <ExcerptFifty />
       </Waterfall>
     </Box>
     <Video
@@ -310,7 +299,7 @@ export default Exhibition
 export async function getStaticProps() {
   const works = {
     thirtyThree: getWork('2.2020.039'),
-    fourtyEight: getWork('2.2020.057'),
+    fifty: getWork('2.2021.003'),
 
     oneFive: getWork('2.2020.015'),
     threeZero: getWork('2.2020.030'),
