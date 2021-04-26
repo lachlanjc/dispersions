@@ -100,7 +100,7 @@ const About = () => (
         />
       </Grid>
     </Box>
-    <Box sx={{ textAlign: 'center', pt: [4, 5], pb: [4, 5, 6] }}>
+    <Box sx={{ textAlign: 'center', pt: [4, 5], pb: [5, 6] }}>
       <Button
         as="a"
         {
