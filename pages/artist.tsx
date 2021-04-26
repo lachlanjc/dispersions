@@ -9,12 +9,15 @@ const About = () => (
   <>
     <Meta title="About" />
     <Grid
-      variant="layout.container"
+      as="header"
       gap={[4, 5]}
       columns={[null, '2fr 3fr']}
-      as="header"
-      py={[4, 5]}
-      sx={{ alignItems: 'start' }}
+      sx={{
+        py: [4, 5],
+        alignItems: 'start',
+        maxWidth: ['layout', null, 'layoutPlus', null, 'wide'],
+        mx: 'auto',
+      }}
     >
       <Image
         layout="responsive"
@@ -23,7 +26,7 @@ const About = () => (
         height={750}
         src="https://images.squarespace-cdn.com/content/v1/56eb1c33a3360ce05c87048d/1464436045312-EN6RRFD64MU95BRLNZID/ke17ZwdGBToddI8pDm48kBZw6jF4_OvU-ddo_vwqGhp7gQa3H78H3Y0txjaiv_0fvbklG0cZ21UMsOO4RokMHM1tH3TUBUgs5FK2W-hN0JTmI-btGPpL0N9bS76ZfKO4OqpeNLcJ80NK65_fV7S1UTwYwMi2KLO6m1qjHhgzSsHRg_hUfpDgUJ6l3gu9zaZojnlzPsk3eU__fePW63nezw/workingatzumbra.jpg?format=1000w"
       />
-      <Box sx={{ fontSize: 2 }}>
+      <Box sx={{ fontSize: 2, px: 3 }}>
         <Heading as="h1" variant="title">
           Christopher Campbell
         </Heading>

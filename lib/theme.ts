@@ -124,7 +124,7 @@ const theme: Theme = {
     },
     ultratitle: {
       fontFamily: 'display',
-      fontSize: [5, 6, 7],
+      fontSize: [4, 5, 6],
       lineHeight: 'title',
       fontWeight: 'heading',
       letterSpacing: 'title',
@@ -132,7 +132,7 @@ const theme: Theme = {
     title: {
       variant: 'text.heading',
       fontFamily: 'display',
-      fontSize: [4, 5, 6],
+      fontSize: [4, 5],
       letterSpacing: 'title',
       lineHeight: 'title',
     },

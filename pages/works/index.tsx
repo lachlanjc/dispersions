@@ -10,7 +10,7 @@ const Works = ({ works }: { works: Array<Artwork> }) => (
   <>
     <Meta title="All works" />
     <Container py={[4, 5]}>
-      <Heading as="h1" variant="title" mb={3}>
+      <Heading as="h1" variant="ultratitle" mb={3}>
         All works
       </Heading>
       <Paragraph as="p" variant="subtitle">

@@ -172,16 +172,23 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
             fontSize: [4, 6, null, 7, 8],
             letterSpacing: '.15em',
             textTransform: 'uppercase',
-            mb: [4, 5],
+            mb: [3, 4],
           }}
         >
           Dispersions
         </Heading>
+        <Text as="p" variant="headline" sx={{ fontWeight: 400 }}>
+          Drawings from a year of COVID
+        </Text>
       </Container>
     </Flex>
     <Box as="section" sx={{ py: [4, 5] }}>
       <Container variant="copy" sx={{ fontSize: 2 }}>
-        <Heading as="h1" variant="headline" sx={{ textAlign: 'center' }}>
+        <Heading
+          as="h2"
+          variant="title"
+          sx={{ textAlign: 'center', mb: [3, 4] }}
+        >
           Introduction
         </Heading>
         <Abstract />
