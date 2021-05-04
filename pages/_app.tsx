@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
+import 'string.prototype.matchall'
 
 import '@/public/fonts.css'
 import 'keen-slider/keen-slider.min.css'
