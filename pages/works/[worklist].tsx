@@ -131,14 +131,14 @@ const Work = ({ work, prev, next }: Props) => {
             },
           }}
         >
-          <NextLink href="/works" scroll={false} passHref>
+          <NextLink href="/works" passHref scroll={false}>
             <Link sx={{ svg: { mr: 2 } }}>
               <GridIcon />
               All works
             </Link>
           </NextLink>
           {prev ? (
-            <NextLink href={`/works/${prev}`} passHref>
+            <NextLink href={`/works/${prev}`} passHref scroll={false}>
               <Link sx={{ svg: { mr: 1 } }}>
                 <ArrowLeft />
                 Previous
@@ -148,7 +148,7 @@ const Work = ({ work, prev, next }: Props) => {
             <span />
           )}
           {next ? (
-            <NextLink href={`/works/${next}`} passHref>
+            <NextLink href={`/works/${next}`} passHref scroll={false}>
               <Link sx={{ justifyContent: 'flex-end', svg: { ml: 1 } }}>
                 Next
                 <ArrowRight />

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import matchAll from 'string.prototype.matchall'
 
 import '@/public/fonts.css'
 import 'keen-slider/keen-slider.min.css'
@@ -12,11 +11,10 @@ import { ThemeProvider } from 'theme-ui'
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { query, pathname } = useRouter()
-  String.prototype.matchAll = matchAll
   return (
     <ThemeProvider theme={theme}>
       <Meta />
-      {!query.worklist && pathname !== '/' && <Nav />}
+      {pathname !== '/' && <Nav />}
       <Component {...pageProps} />
     </ThemeProvider>
   )

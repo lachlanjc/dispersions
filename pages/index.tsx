@@ -33,7 +33,7 @@ const Home = () => (
       }}
     >
       <Text as="p" variant="eyebrow" color="white" mb={3}>
-        Opening April 2021
+        Opening May 2021
       </Text>
       <Heading as="h1" variant="ultratitle" mb={[4, 5]}>
         Christopher Campbell’s debut online exhibition.
