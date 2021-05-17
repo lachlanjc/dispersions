@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/hls.js": "^1.0.0",
     "@types/lodash": "^4.14.169",
-    "@types/node": "^15.0.3",
+    "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",
     "exifr": "^7.0.0",
     "image-size": "^1.0.0",
