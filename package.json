@@ -28,7 +28,7 @@
     "@types/hls.js": "^1.0.0",
     "@types/lodash": "^4.14.170",
     "@types/node": "^15.6.1",
-    "@types/react": "^17.0.5",
+    "@types/react": "^17.0.8",
     "exifr": "^7.0.0",
     "image-size": "^1.0.0",
     "neat-csv": "^6.0.1",
