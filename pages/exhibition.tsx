@@ -8,6 +8,7 @@ import Video from '@/components/video'
 import Abstract from '@/components/writing/abstract.mdx'
 import ExcerptThirtyThree from '@/components/writing/excerpt-33.mdx'
 import ExcerptFifty from '@/components/writing/excerpt-50.mdx'
+import TJC from '@/components/tjc.mdx'
 import { ArrowRight } from '@/components/icons'
 import { colors } from '@/lib/theme'
 import { getWork, imageUrl } from '@/lib/worklist'
@@ -250,11 +251,6 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       >
         Two works in detail
       </Heading>
-      {/* <Grid variant="layout.container" gap={[4, 5]} columns={[null, '2fr 3fr']}>
-        <Container variant="copy" sx={{ fontSize: 2 }}>
-          <ExcerptFourtyEight />
-        </Container>
-      </Grid> */}
       <StickyWork work={works.thirtyThree} />
       <Waterfall>
         <ExcerptThirtyThree />
@@ -271,6 +267,11 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       muted
       loop
     />
+    <Box as="section" bg="snow">
+      <Container variant="copy" py={[4, 5]}>
+        <TJC />
+      </Container>
+    </Box>
     <Grid
       variant="layout.container"
       columns={[2, 3]}
