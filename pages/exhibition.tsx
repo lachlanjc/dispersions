@@ -62,6 +62,7 @@ const StickyWork = ({ work }: { work: Artwork }) => {
               width={cover.width}
               height={cover.height}
               objectFit="contain"
+              placeholder="blur"
             />
           )}
           <Box>

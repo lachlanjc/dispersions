@@ -133,6 +133,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
               sizes="50vw"
               objectFit="contain"
               unoptimized
+              placeholder="blur"
             />
           </Box>
         ))}

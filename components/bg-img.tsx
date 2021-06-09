@@ -44,6 +44,7 @@ const BGImg = ({
       layout="responsive"
       objectFit="cover"
       objectPosition="center"
+      placeholder="blur"
       {...props}
     />
   </Box>

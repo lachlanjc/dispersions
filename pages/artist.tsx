@@ -21,6 +21,7 @@ const About = () => (
     >
       <Image
         layout="responsive"
+        placeholder="blur"
         sizes="40vw"
         width={1000}
         height={750}
@@ -68,6 +69,7 @@ const About = () => (
       <Grid columns={[null, 2]} gap={[3, 4, 5]}>
         <Image
           layout="responsive"
+          placeholder="blur"
           width={4096}
           height={2733}
           alt="Christopher's painting tools on a glass palette outside"
@@ -76,6 +78,7 @@ const About = () => (
         />
         <Image
           layout="responsive"
+          placeholder="blur"
           width={4096}
           height={3072}
           alt="Christopher's studio on a sunny day"
@@ -84,6 +87,7 @@ const About = () => (
         />
         <Image
           layout="responsive"
+          placeholder="blur"
           width={4096}
           height={3072}
           alt="Grouping of works on the floor"
@@ -92,6 +96,7 @@ const About = () => (
         />
         <Image
           layout="responsive"
+          placeholder="blur"
           width={4096}
           height={3072}
           alt="Grouping of works on the floor"
