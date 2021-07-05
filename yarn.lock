@@ -1519,10 +1519,10 @@ exenv@^1.2.0:
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
   integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
 
-exifr@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/exifr/-/exifr-7.0.0.tgz#065d54639f2999ac901dd8475db99b4d3f31f11e"
-  integrity sha512-5JRtopcolAfsX4YGcvTkldXyFDC+VPV40DxhSdRvrDr4OJQHtyccNoYl4aRzYBnVVpNueMmenS0KhzLiyNSfEQ==
+exifr@^7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/exifr/-/exifr-7.1.2.tgz#412e076fbd2033cf27a7625306396f7efa2c4b6b"
+  integrity sha512-XZRvQJFJVeMfb6BLY755MoOBq+V644nzxRPjZ8G5+qvBi0nfcT1n2OdA4CshBKTF12fC1RQM9cpiKtQ/LwFLog==
 
 extend@^3.0.0:
   version "3.0.2"
