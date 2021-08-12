@@ -133,7 +133,6 @@ const ImageGallery = ({ images, onCaption }: Props) => {
               sizes="50vw"
               objectFit="contain"
               unoptimized
-              placeholder="blur"
             />
           </Box>
         ))}
@@ -142,7 +141,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
         <IconButton
           key="prev"
           onClick={slider?.prev}
-          aria-label="Previous Image"
+          title="Previous Image"
           sx={{
             ...controlSx,
             left: 2,
@@ -154,7 +153,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
         <IconButton
           key="next"
           onClick={slider?.next}
-          aria-label="Next Image"
+          title="Next Image"
           sx={{
             ...controlSx,
             right: 2,

@@ -31,7 +31,6 @@ const Work = ({ work, img = 0 }: Props) => {
             height={cover.height}
             sizes="25vw"
             objectFit="contain"
-            placeholder="blur"
           />
         ) : (
           <Box sx={{ width: '100%', pb: '100%', bg: 'sunken' }} />

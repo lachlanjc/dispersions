@@ -29,7 +29,6 @@ const Work = ({ work, img = 0 }: Props) => {
           width={cover.width}
           height={cover.height}
           objectFit="contain"
-          placeholder="blur"
         />
       )}
       <Box>

@@ -40,11 +40,12 @@ const BGImg = ({
       '~ *': { position: 'relative' },
     }}
   >
+    {/* @ts-ignore required props aren't passed here */}
     <Image
+      placeholder="blur"
       layout="responsive"
       objectFit="cover"
       objectPosition="center"
-      placeholder="blur"
       {...props}
     />
   </Box>

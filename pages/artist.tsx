@@ -21,11 +21,10 @@ const About = () => (
     >
       <Image
         layout="responsive"
-        placeholder="blur"
         sizes="40vw"
         width={1000}
         height={750}
-        src="https://images.squarespace-cdn.com/content/v1/56eb1c33a3360ce05c87048d/1464436045312-EN6RRFD64MU95BRLNZID/ke17ZwdGBToddI8pDm48kBZw6jF4_OvU-ddo_vwqGhp7gQa3H78H3Y0txjaiv_0fvbklG0cZ21UMsOO4RokMHM1tH3TUBUgs5FK2W-hN0JTmI-btGPpL0N9bS76ZfKO4OqpeNLcJ80NK65_fV7S1UTwYwMi2KLO6m1qjHhgzSsHRg_hUfpDgUJ6l3gu9zaZojnlzPsk3eU__fePW63nezw/workingatzumbra.jpg?format=1000w"
+        src="/artist/portrait.jpg"
       />
       <Box sx={{ fontSize: 2, px: 3 }}>
         <Heading as="h1" variant="title">
@@ -69,7 +68,6 @@ const About = () => (
       <Grid columns={[null, 2]} gap={[3, 4, 5]}>
         <Image
           layout="responsive"
-          placeholder="blur"
           width={4096}
           height={2733}
           alt="Christopher's painting tools on a glass palette outside"
@@ -78,7 +76,6 @@ const About = () => (
         />
         <Image
           layout="responsive"
-          placeholder="blur"
           width={4096}
           height={3072}
           alt="Christopher's studio on a sunny day"
@@ -87,7 +84,6 @@ const About = () => (
         />
         <Image
           layout="responsive"
-          placeholder="blur"
           width={4096}
           height={3072}
           alt="Grouping of works on the floor"
@@ -96,7 +92,6 @@ const About = () => (
         />
         <Image
           layout="responsive"
-          placeholder="blur"
           width={4096}
           height={3072}
           alt="Grouping of works on the floor"
