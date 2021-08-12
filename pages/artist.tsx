@@ -25,6 +25,7 @@ const About = () => (
         width={1000}
         height={750}
         src="/artist/portrait.jpg"
+        alt="Portrait of Christopher Campbell"
       />
       <Box sx={{ fontSize: 2, px: 3 }}>
         <Heading as="h1" variant="title">

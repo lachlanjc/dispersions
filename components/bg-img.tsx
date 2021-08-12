@@ -41,6 +41,7 @@ const BGImg = ({
     }}
   >
     {/* @ts-ignore required props aren't passed here */}
+    {/* eslint-disable-next-line jsx-a11y/alt-text */}
     <Image
       placeholder="blur"
       layout="responsive"

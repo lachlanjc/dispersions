@@ -115,10 +115,11 @@ const InquireForm = ({ work }: { work: Artwork }) => {
         </Field>
         <Button
           type="submit"
-          children="Submit inquiry"
           variant="outline"
           sx={{ color: 'primary', mx: 'auto' }}
-        />
+        >
+          Submit inquiry
+        </Button>
       </Box>
     </>
   )

@@ -1,11 +1,12 @@
 {
-  "name": "@lachlanjc/studio-show",
+  "name": "@lachlanjc/dispersions",
   "version": "0.0.1",
   "author": "Lachlan Campbell (https://lachlanjc.com) <lachlanjc@hey.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next",
+    "lint": "next lint",
     "build": "next build",
     "start": "next start",
     "worklist": "node lib/worklist/process.js"
@@ -29,6 +30,8 @@
     "@types/lodash": "^4.14.172",
     "@types/node": "^16.6.0",
     "@types/react": "^17.0.17",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
     "exifr": "^7.1.3",
     "image-size": "^1.0.0",
     "neat-csv": "^6.0.1",

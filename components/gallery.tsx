@@ -52,7 +52,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
     setCurrentSlide(0)
     slider?.refresh()
     slider?.moveToSlide(0)
-  }, [images])
+  }, [slider, images])
 
   // Stop the history navigation gesture on touch devices
   useEffect(() => {
@@ -73,16 +73,14 @@ const ImageGallery = ({ images, onCaption }: Props) => {
         event.preventDefault()
     }
 
-    sliderContainerRef.current?.addEventListener(
-      'touchstart',
-      preventNavigation,
-    )
+    const slider = sliderContainerRef.current!
+
+    slider.addEventListener('touchstart', preventNavigation)
 
     return () => {
-      sliderContainerRef.current?.removeEventListener(
-        'touchstart',
-        preventNavigation,
-      )
+      if (slider) {
+        slider.removeEventListener('touchstart', preventNavigation)
+      }
     }
   }, [])
 
