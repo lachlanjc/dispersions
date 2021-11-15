@@ -17,7 +17,7 @@
     "@next/mdx": "^11.1.0",
     "@types/react-modal": "^3.12.1",
     "@u-wave/react-vimeo": "^0.9.5",
-    "hls.js": "^1.0.9",
+    "hls.js": "^1.1.1",
     "keen-slider": "^5.5.1",
     "next": "^11.1.2",
     "react": "^17.0.2",
