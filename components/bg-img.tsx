@@ -36,14 +36,13 @@ const BGImg = ({
             },
           }
         : {}),
-      '> div': { height: '100%', width: '100%' },
+      '> span': { height: '100%', width: '100%' },
       '~ *': { position: 'relative' },
     }}
   >
     {/* @ts-ignore required props aren't passed here */}
     {/* eslint-disable-next-line jsx-a11y/alt-text */}
     <Image
-      placeholder="blur"
       layout="responsive"
       objectFit="cover"
       objectPosition="center"
