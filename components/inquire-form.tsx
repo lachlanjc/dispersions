@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { Box, Grid, Heading, Text, Textarea, Input, Button } from 'theme-ui'
 import Image from 'next/image'
 import { imageUrl } from '@/lib/worklist'
-import { useForm, ValidationError } from '@formspree/react'
+import { useForm } from '@formspree/react'
 
 type Props = { work: Artwork; img?: number }
 

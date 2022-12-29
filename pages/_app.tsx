@@ -10,7 +10,7 @@ import theme from '@/lib/theme'
 import { ThemeProvider } from 'theme-ui'
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const { query, pathname } = useRouter()
+  const { pathname } = useRouter()
   return (
     <ThemeProvider theme={theme}>
       <Meta />
