@@ -104,9 +104,7 @@ const About = () => (
     <Box sx={{ textAlign: 'center', pt: [4, 5], pb: [5, 6] }}>
       <Button
         as="a"
-        {
-          /* @ts-ignore Theme UI doesn't use <a> types */ ...null
-        }
+        /* @ts-expect-error Theme UI doesn't use <a> types */
         href="https://cbcampbell.com/works"
         target="_blank"
         variant="outlineLg"
