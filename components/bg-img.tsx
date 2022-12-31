@@ -23,18 +23,19 @@ const BGImg = ({
       right: 0,
       bottom: 0,
       zIndex: 0,
+      overflow: 'hidden',
       ...(gradient
         ? {
-            '&:after': {
-              content: '""',
-              position: 'absolute',
-              backgroundImage: `linear-gradient(${gradient})`,
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            },
-          }
+          '&:after': {
+            content: '""',
+            position: 'absolute',
+            backgroundImage: `linear-gradient(${gradient})`,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          },
+        }
         : {}),
       '> div': { height: '100%', width: '100%' },
       '~ *': { position: 'relative' },

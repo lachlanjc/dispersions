@@ -1,4 +1,4 @@
-import { Container, Flex, NavLink } from 'theme-ui'
+import { Flex, NavLink } from 'theme-ui'
 import Link from 'next/link'
 
 const Nav = () => (
@@ -21,7 +21,7 @@ const Nav = () => (
       },
     }}
   >
-    <Link href="/exhibition" passHref>
+    <Link href="/" passHref>
       <NavLink>Exhibition</NavLink>
     </Link>
     <Link href="/works" passHref>

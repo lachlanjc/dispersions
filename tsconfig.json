@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,13 +19,26 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "*": ["./lib/typings/*"],
-      "@/lib/*": ["./lib/*"],
-      "@/components/*": ["./components/*"],
-      "@/public/*": ["./public/*"],
-    }
+      "*": [
+        "./lib/typings/*"
+      ],
+      "@/lib/*": [
+        "./lib/*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ]
+    },
+    "incremental": true
   },
-  "exclude": ["node_modules",".next","out"],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out"
+  ],
   "include": [
     "**/*.ts",
     "**/*.tsx",

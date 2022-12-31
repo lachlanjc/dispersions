@@ -14,4 +14,23 @@ module.exports = withMDX({
       },
     ]
   },
+  rewrites: async function () {
+    return [
+      {
+        source: '/artist/:path*',
+        destination:
+          'https://d1wa56x8uvnqfp.cloudfront.net/dispersions-artist/:path*',
+      },
+      {
+        source: '/excerpts/:path*',
+        destination:
+          'https://d1wa56x8uvnqfp.cloudfront.net/dispersions-excerpts/:path*',
+      },
+      {
+        source: '/worklist/:path*',
+        destination:
+          'https://d1wa56x8uvnqfp.cloudfront.net/dispersions-worklist/:path*',
+      },
+    ]
+  },
 })
