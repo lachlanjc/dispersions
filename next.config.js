@@ -1,6 +1,7 @@
 const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
 /** @type {import('next').NextConfig} */
 module.exports = withMDX({
+  swcMinify: true,
   pageExtensions: ['js', 'ts', 'tsx', 'mdx'],
   images: {
     domains: ['d1wa56x8uvnqfp.cloudfront.net'],
