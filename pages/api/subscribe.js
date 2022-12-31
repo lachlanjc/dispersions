@@ -1,5 +1,5 @@
 // Via https://leerob.io/snippets/buttondown
-export default async (req, res) => {
+export default async function Subscribe(req, res) => {
   const { email } = req.body
 
   if (!email) {
