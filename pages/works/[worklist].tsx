@@ -170,13 +170,19 @@ const Work = ({ work, prev, next }: Props) => {
         <Text as="p" mb={[3, 4]}>
           {formatDimsCm(work)} ({formatDimsIn(work)})
         </Text>
-        <Button
-          onClick={() => setInquiring(true)}
-          variant="outline"
-          sx={{ color: 'text' }}
-        >
-          Inquire
-        </Button>
+        {work.reserved ? (
+          <Text as="strong" sx={{ color: 'red', display: 'block', height: 44 }}>
+            Reserved
+          </Text>
+        ) : (
+          <Button
+            onClick={() => setInquiring(true)}
+            variant="outline"
+            sx={{ color: 'text' }}
+          >
+            Inquire
+          </Button>
+        )}
         <Text
           as="p"
           sx={{

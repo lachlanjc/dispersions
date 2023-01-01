@@ -110,7 +110,7 @@ const Waterfall = ({ children }: { children: any }) => {
           // '&:nth-of-type(3)': {
           //   mr: [null, -4, -5],
           // },
-          '> div, > img': {
+          '> span, > img': {
             // maxWidth: ['100%', '400px !important'],
             maxHeight: ['50vh', 400, 512],
             mx: 'auto !important',
@@ -205,7 +205,7 @@ const Exhibition = ({ works }: { works: Record<string, Artwork> }) => (
       <Heading
         as="h1"
         variant="title"
-        sx={{ color: 'white', textAlign: 'center', pt: [3, 4], p: 3 }}
+        sx={{ color: 'white', textAlign: 'center', px: 3, mb: 3 }}
       >
         Artist statement
       </Heading>

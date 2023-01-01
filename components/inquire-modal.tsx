@@ -55,7 +55,7 @@ const InquireModal = ({
       @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
         .ReactModal__Overlay {
           background-color: rgba(180, 180, 180, 0.25) !important;
-          backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(12px);
           -webkit-backdrop-filter: saturate(180%) blur(12px);
         }
       }
@@ -67,10 +67,10 @@ const InquireModal = ({
       .ReactModal__Content {
         background-color: #fff !important;
         width: 100% !important;
-        max-width: ${theme.sizes.copy}px !important;
+        max-width: ${theme.sizes.copyPlus}px !important;
         overflow: auto !important;
         position: relative !important;
-        padding: ${theme.space[3]} !important;
+        padding: ${theme.space[3]}px !important;
         border: 0 !important;
         border-radius: 0 !important;
         max-height: calc(80vh) !important;
@@ -82,8 +82,13 @@ const InquireModal = ({
         animation: modal-fade ease-in-out 0.25s;
       }
       @media (min-width: ${theme.breakpoints[1]}) {
+        .ReactModal__Overlay {
+          align-items: center;
+        }
         .ReactModal__Content {
-          padding: ${theme.space[5]} !important;
+          padding: ${theme.space[5]}px !important;
+          top: auto !important;
+          transform: none;
         }
       }
     `}</style>

@@ -37,7 +37,7 @@ const BGImg = ({
           },
         }
         : {}),
-      '> div': { height: '100%', width: '100%' },
+      '> span': { height: '100%', width: '100%' },
       '~ *': { position: 'relative' },
     }}
   >

@@ -4,7 +4,6 @@ specifiers:
   '@formspree/react': ^2.4.1
   '@mdx-js/loader': ^1.6.22
   '@next/mdx': '12'
-  '@types/hls.js': ^1.0.0
   '@types/lodash': ^4.14.191
   '@types/node': ^18.11.18
   '@types/react': ^17.0.52
@@ -16,6 +15,7 @@ specifiers:
   hls.js: ^1.2.9
   image-size: ^1.0.2
   keen-slider: ^5.5.1
+  lodash: ^4.17.21
   neat-csv: ^6.0.1
   next: '12'
   react: ^17.0.2
@@ -33,6 +33,7 @@ dependencies:
   '@u-wave/react-vimeo': 0.9.10_react@17.0.2
   hls.js: 1.2.9
   keen-slider: 5.5.1
+  lodash: 4.17.21
   next: 12.3.4_sfoxds7t5ydpegc3knd667wn6m
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -40,7 +41,6 @@ dependencies:
   theme-ui: 0.11.3_q5o373oqrklnndq2vhekyuzhxi
 
 devDependencies:
-  '@types/hls.js': 1.0.0
   '@types/lodash': 4.14.191
   '@types/node': 18.11.18
   '@types/react': 17.0.52
@@ -923,13 +923,6 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
     dev: false
-
-  /@types/hls.js/1.0.0:
-    resolution: {integrity: sha512-EGY2QJefX+Z9XH4PAxI7RFoNqBlQEk16UpYR3kbr82CIgMX5SlMe0PjFdFV0JytRhyVPQCiwSyONuI6S1KdSag==}
-    deprecated: This is a stub types definition. hls.js provides its own type definitions, so you do not need this installed.
-    dependencies:
-      hls.js: 1.2.9
-    dev: true
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
@@ -2117,6 +2110,7 @@ packages:
 
   /hls.js/1.2.9:
     resolution: {integrity: sha512-SPjm8ix0xe6cYzwDvdVGh2QvQPDkCYrGWpZu6bRaKNNVyEGWM9uF0pooh/Lqj/g8QBQgPFEx1vHzW8SyMY9rqg==}
+    dev: false
 
   /hoist-non-react-statics/3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}

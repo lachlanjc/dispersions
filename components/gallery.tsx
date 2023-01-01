@@ -116,7 +116,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
               alignSelf: 'center',
               display: 'flex',
               minHeight: 'auto',
-              '> div': {
+              '> span': {
                 flexShrink: 0,
                 width: '100%',
                 maxHeight: '92vh',
@@ -128,7 +128,8 @@ const ImageGallery = ({ images, onCaption }: Props) => {
               alt={img.caption}
               width={img.width}
               height={img.height}
-              sizes="50vw"
+              layout="intrinsic"
+              sizes="92vh"
               objectFit="contain"
               unoptimized
             />
