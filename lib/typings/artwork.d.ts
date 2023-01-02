@@ -1,5 +1,6 @@
 interface Image {
-  path: string
+  src: string
+  blurDataURL: string
   caption: string
   width: number
   height: number

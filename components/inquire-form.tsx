@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
 import { Box, Grid, Heading, Text, Textarea, Input, Button } from 'theme-ui'
 import Image from 'next/image'
-import { imageUrl } from '@/lib/worklist'
 import { useForm } from '@formspree/react'
 
 type Props = { work: Artwork; img?: number }
@@ -24,10 +23,9 @@ const Work = ({ work, img = 0 }: Props) => {
     >
       {cover && (
         <Image
-          src={imageUrl(cover.path)}
+          {...cover}
+          placeholder="blur"
           alt={cover.caption}
-          width={cover.width}
-          height={cover.height}
           objectFit="contain"
         />
       )}

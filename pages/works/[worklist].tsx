@@ -27,6 +27,7 @@ type Params = { params: { worklist: WorklistNumber } }
 
 const Work = ({ work, prev, next }: Props) => {
   const cover = work.images[0] // .filter(i => i.path.includes('copywork'))?.[0]
+  const coverUrl = imageUrl(cover.src)
   const [caption, setCaption] = useState<string>('')
   const [inquiring, setInquiring] = useState<boolean>(false)
 
@@ -42,7 +43,7 @@ const Work = ({ work, prev, next }: Props) => {
       <Meta
         title={work.title}
         description={`This ${work.date} artwork on ${work.medium} is part of Christopher Campbell’s Dispersions exhibition inspired by COVID-19.`}
-        image={cover ? imageUrl(cover.path) : undefined}
+        image={cover ? coverUrl : undefined}
       >
         {cover?.width && (
           <meta
@@ -95,12 +96,12 @@ const Work = ({ work, prev, next }: Props) => {
               },
               image: cover
                 ? {
-                    '@type': 'ImageObject',
-                    url: imageUrl(cover.path),
-                    description: cover.caption || work.worklist,
-                    height: cover.height,
-                    width: cover.width,
-                  }
+                  '@type': 'ImageObject',
+                  url: coverUrl,
+                  description: cover.caption || work.worklist,
+                  height: cover.height,
+                  width: cover.width,
+                }
                 : undefined,
             }),
           }}
@@ -172,7 +173,7 @@ const Work = ({ work, prev, next }: Props) => {
         </Text>
         {work.reserved ? (
           <Text as="strong" sx={{ color: 'red', display: 'block', height: 44 }}>
-            Reserved
+            Sold
           </Text>
         ) : (
           <Button

@@ -45,6 +45,6 @@ const Works = ({ works }: { works: Array<Artwork> }) => (
 export default Works
 
 export const getStaticProps: GetStaticProps = async () => {
-  const works = getFullWorklist()
+  const works = getFullWorklist().map(work => ({ ...work, images: [work.images[0]] }))
   return { props: { works } }
 }

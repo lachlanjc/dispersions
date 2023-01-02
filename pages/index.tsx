@@ -11,7 +11,7 @@ import ExcerptFifty from '@/components/writing/excerpt-50.mdx'
 import TJC from '@/components/writing/tjc.mdx'
 import { ArrowRight } from '@/components/icons'
 import { colors } from '@/lib/theme'
-import { getWork, imageUrl } from '@/lib/worklist'
+import { getWork } from '@/lib/worklist'
 import Link from 'next/link'
 import Work from '@/components/work'
 
@@ -55,10 +55,9 @@ const StickyWork = ({ work }: { work: Artwork }) => {
         >
           {cover && (
             <Image
-              src={imageUrl(cover.path)}
+              {...cover}
+              placeholder="blur"
               alt={cover.caption}
-              width={cover.width}
-              height={cover.height}
               objectFit="contain"
             />
           )}

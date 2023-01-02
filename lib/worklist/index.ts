@@ -36,7 +36,6 @@ export const formatDimsIn = (work: Artwork): string =>
   `${work.dim.inW} × ${work.dim.inH} in`
 
 export const imageUrl = (path: string): string => {
-  // if (process.env.NODE_ENV === 'development') return path
   return (
     'https://d1wa56x8uvnqfp.cloudfront.net' +
     path.replace(/^\//, '/dispersions-')

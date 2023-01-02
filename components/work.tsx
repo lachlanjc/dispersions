@@ -1,7 +1,6 @@
 import { Box, Text, Link } from 'theme-ui'
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { imageUrl } from '@/lib/worklist'
 
 type Props = { work: Artwork; img?: number }
 
@@ -25,10 +24,9 @@ const Work = ({ work, img = 0 }: Props) => {
       >
         {cover ? (
           <Image
-            src={imageUrl(cover.path)}
+            {...cover}
+            placeholder="blur"
             alt={cover.caption}
-            width={cover.width}
-            height={cover.height}
             sizes="25vw"
             objectFit="contain"
           />

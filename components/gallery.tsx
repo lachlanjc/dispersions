@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Box, IconButton, ThemeUIStyleObject } from 'theme-ui'
 import { ChevronPrev, ChevronNext } from './icons'
 import Image from 'next/image'
-import { imageUrl } from '@/lib/worklist'
 
 type Props = { images: Image[]; onCaption: (c: string) => void }
 
@@ -110,7 +109,7 @@ const ImageGallery = ({ images, onCaption }: Props) => {
       >
         {images.map(img => (
           <Box
-            key={img.path}
+            key={img.src}
             className="keen-slider__slide"
             sx={{
               alignSelf: 'center',
@@ -124,12 +123,10 @@ const ImageGallery = ({ images, onCaption }: Props) => {
             }}
           >
             <Image
-              src={imageUrl(img.path)}
+              {...img}
+              placeholder="blur"
               alt={img.caption}
-              width={img.width}
-              height={img.height}
               layout="intrinsic"
-              sizes="92vh"
               objectFit="contain"
               unoptimized
             />
